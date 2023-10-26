@@ -2,7 +2,7 @@
 
 html {
   box-sizing: border-box;
-}   
+}
 
 *,
 *:before,
@@ -11,33 +11,25 @@ html {
 }
 
 .ModalCss {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 70%;
-  line-height: 1.4;
-  font-family: "Inter", sans-serif;
-  color: #6b7280;
-  font-weight: 400;
-
-  @media only screen and (min-width: 600px) {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-size: 100%;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 
 
 .Modalbutton {
   appearance: none;
   background: #16a34a;
-  border-radius: 0.25em;
+  border-radius: 1VW;
   color: white;
   cursor: pointer;
   display: inline-block;
   font-weight: 500;
-  height: 3em;
-  line-height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2vw;
+  line-height: 1vw;
   padding: 0 1em;
 
   &:hover {
@@ -50,9 +42,9 @@ html {
   background: #ffffff;
   border-radius: 0.5em;
   box-shadow: 0 10px 20px rgba(black, 0.2);
-  left: 50%;
   pointer-events: none;
   position: absolute;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 50vw;
@@ -60,7 +52,6 @@ html {
   max-height: 90vh;
   display: flex;
   flex-direction: column;
-
 
   .details-modal-close {
     align-items: center;
@@ -125,10 +116,11 @@ html {
 details {
   summary {
     list-style: none;
-      
+
     &:focus {
       outline: none;
     }
+
     &::-webkit-details-marker {
       display: none;
     }
@@ -153,17 +145,18 @@ code {
 
 .Modalcontainer {
   text-align: center;
-  max-width: 40em;
-  padding: 2em;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
 
-  > h1 {
+  >h1 {
     font-weight: 700;
     font-size: 2rem;
     line-height: normal;
     color: #111827;
   }
 
-  > p {
+  >p {
     margin-top: 2em;
     margin-bottom: 2em;
   }

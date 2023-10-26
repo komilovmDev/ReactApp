@@ -39,7 +39,9 @@ export default function Card({ ids, closeRef }) {
             {
                 cards.map(card => (
                     <div className="taskInfoCard" key={card.id}>
-                        <button onClick={() => deleteCard(card.id)}><AiOutlineDelete /></button>
+                        <div className="DeleteCardBox">
+                            <BasicModal main={<button className="saveModal" onClick={() => deleteCard(card.id)}>ok</button>} text={'Delete Card ?'} btn={<AiOutlineDelete color='red' size={'25px'} />} />
+                        </div>
                         <p>{card.title}</p>
                         <div className="taskInfoCard__usersINfo">
                             <img src="https://lh3.googleusercontent.com/a/AAcHTtebJ7FQXHDSt3g_H96uktTJuDJIcYFas4iuzt1iMGSV=s96-c" alt="" />
@@ -56,7 +58,7 @@ export default function Card({ ids, closeRef }) {
                                 <details>
                                     <summary>
                                         <div className="Modalbutton">
-                                            Show me the modal
+                                            Comentariy
                                         </div>
                                         <div className="details-modal-overlay"></div>
                                     </summary>

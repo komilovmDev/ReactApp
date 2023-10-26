@@ -10,11 +10,11 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: '30vw',
   bgcolor: 'background.paper',
-  border: '2px solid #000',
   boxShadow: 24,
   p: 4,
+  borderRadius:'1vw',
 };
 
 export default function BasicModal({btn , text , main , element}) {
@@ -23,7 +23,7 @@ export default function BasicModal({btn , text , main , element}) {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
+    <div className='ModalYON'>
       <Button style={{minWidth: 'auto'}} onClick={handleOpen}>{btn}</Button>
       <Modal
         open={open}

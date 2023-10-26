@@ -1,17 +1,18 @@
 .canelModal {
     padding: 4px 23px;
     margin-left: 10px;
-    background-color: #b4b7bb25;
-    color: #000000;
+    background-color: #FF8B36;
+    color: #ffff;
     cursor: pointer;
+    border: none;
     font-size: 16px;
-    border: 1px solid black;
     border-radius: 5px;
+    outline: none;
 }
 
 .saveModal {
     padding: 6px 26px;
-    background-color: #1976d2;
+    background-color: #FF8B36;
     color: #fff;
     cursor: pointer;
     font-size: 16px;

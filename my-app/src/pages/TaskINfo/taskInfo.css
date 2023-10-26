@@ -551,3 +551,16 @@
 .block {
   display: none;
 }
+
+.cardDeleteBtn {
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  color: red;
+}
+
+.DeleteCardBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
