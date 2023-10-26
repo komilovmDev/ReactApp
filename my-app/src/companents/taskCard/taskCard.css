@@ -42,3 +42,63 @@
 .greenCard {
     background-color: #40C9A2;
 }
+
+
+/* dropdown */
+
+.dropbtn {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--dark-gray-dark-gray-2, #252c32);
+    font-size: .9vw;
+    font-style: normal;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: .3vw;
+    border-bottom: 0.1vw solid white;
+  }
+  
+  .dropbtn:hover,
+  .dropbtn:focus {
+    border-bottom: 0.1vw solid transparent;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    width: auto;
+    height: auto;
+    position: absolute;
+    display: none;
+    border-radius: 8px;
+    border: 1px solid var(--gray-100, #F2F4F7);
+    background: var(--White, #FFF);
+    box-shadow: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+    padding: .5vw .72vw;
+    z-index: 1;
+    left: -50px;
+  }
+  
+  .dropdown-content a {
+    width: 100%;
+    height: auto;
+    color: var(--gray-900, #101828);
+    text-decoration: none;
+    display: flex;
+  }
+  
+  .dropdown-content a:hover .ButtonChek{
+    display: flex;
+   
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: .41vw;
+  }

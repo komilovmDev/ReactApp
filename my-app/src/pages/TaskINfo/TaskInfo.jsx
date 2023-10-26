@@ -235,10 +235,6 @@ export default function TaskInfo() {
                     </div>
                 </div>
             </div >
-
-            <Link to={'/Modal'}>
-                <button>Click ME</button>
-            </Link>
         </>
     )
 }

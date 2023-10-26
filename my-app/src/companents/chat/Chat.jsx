@@ -97,22 +97,20 @@ function Chat({ card }) {
           },
         }
       );
-
+      messageValue.current.value = "";
+      fileValue.current.value = null; 
       // After successful submission, add the new message to the state
-      const newMessageObj = {
-        text: messageValue.current.value,
-        file: fileValue.current.files[0],
-        user: [
-          {
-            profile_image: userInfos[0].profile_image,
-          }
-        ],
-      };
+      // const newMessageObj = {
+      //   text: messageValue.current.value,
+      //   file: fileValue.current.files[0],
+      //   user: [
+      //     {
+      //       profile_image: userInfos[0].profile_image,
+      //     }
+      //   ],
+      // };
       getCommet()
-      setMessages([...messages, newMessageObj]);
-      messageValue.current.value = ''; // Clear the input field
-      fileValue.current.value = null; // Clear the file input field
-      window.location.reload(Chat);
+      // setMessages([...messages, newMessageObj]);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -167,9 +165,9 @@ function Chat({ card }) {
       </div>
       <div className="message-input">
         <img src={img} alt="img" />
-        <input className='Habar' ref={messageValue} type="text" placeholder="Xabar kiritish..." value={newMessage} onChange={handleMessageChange} />
+        <input className='Habar' ref={messageValue} type="text" placeholder="Xabar kiritish..."  onChange={handleMessageChange} />
         <input className='HabarFile' ref={fileValue} type="file" onChange={handleFileChange} />
-        <button onClick={() => postCommit()}>Yuborish</button>
+        <button type='reset' onClick={() => postCommit()}>Yuborish</button>
       </div>
     </div>
   );
