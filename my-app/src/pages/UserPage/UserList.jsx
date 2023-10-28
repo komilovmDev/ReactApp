@@ -14,6 +14,7 @@ import { MdDescription } from 'react-icons/md'
 import { GoKebabHorizontal } from 'react-icons/go'
 import Card from "../TaskINfo/Card";
 import { useParams } from "react-router-dom";
+import UserCard from "./UserCard";
 
 
 export default function UserList({ taskItem, closeRef, setEditingTaskName, editingTaskName, inputRef, changeRef }) {
@@ -129,7 +130,7 @@ export default function UserList({ taskItem, closeRef, setEditingTaskName, editi
                 </div>
 
                 <div className="taskInfoCardGlav">
-                    <Card closeRef={closeRef} ids={taskItem.id} />
+                    <UserCard closeRef={closeRef} ids={taskItem.id} />
                 </div>
                 {/* <div className="addMiniDesc">
                     <input onKeyPress={(e) => {
