@@ -69,7 +69,10 @@ export default function MainNav({ setTaskData, taskData }) {
     return (
         <>
             <div className="mainNav">
-                <h5>All Boards</h5>
+                <div style={{display: 'flex' , gap: '10px'}}>
+                    <button>Active Boards</button>
+                    <button style={{background: 'green'}}>Check Boards</button>
+                    <button style={{background: '#ED3147'}}>Error Bords</button></div>
                 <button onClick={() => closeRef.current.classList.remove('none')}>+ Add</button>
             </div>
             <div ref={closeRef} className="mainNavModel none">

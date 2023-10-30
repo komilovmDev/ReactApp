@@ -1,0 +1,63 @@
+import React, { useEffect, useState } from "react";
+
+export const Timer = () => {
+  const [inputDate, setInputDate] = useState("");
+  const [seconds, setSeconds] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+
+  let interval;
+
+  useEffect(() => {
+    if (isRunning) {
+      interval = setInterval(() => {
+        if (seconds > 0) {
+          setSeconds(seconds - 1);
+        }
+      }, 1000);
+    } else {
+      clearInterval(interval);
+    }
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [seconds, isRunning]);
+
+  const startTimer = () => {
+    const parsedDate = Date.parse(inputDate);
+    if (!isNaN(parsedDate)) {
+      setIsRunning(true);
+      setSeconds(Math.max(Math.floor((parsedDate - Date.now()) / 1000), 0));
+    }
+  };
+
+  const stopTimer = () => {
+    setIsRunning(false);
+  };
+
+  const starttimer = () => {
+    setIsRunning(true);
+  };
+
+  const formatTime = (time) => {
+    const days = Math.floor(time / (24 * 60 * 60));
+    const hours = Math.floor((time % (24 * 60 * 60)) / (60 * 60));
+
+    return `${days} kun  ${hours} soat`;
+  };
+
+  return (
+    <div className="timer">
+      <h2>Qolgan Vaqt!</h2>
+      <input
+        type="datetime-local"
+        value={inputDate}
+        onChange={(e) => setInputDate(e.target.value)}
+      />
+      <button onClick={startTimer}>Boshlash</button>
+      <button onClick={stopTimer}>To'xtatish</button>
+      <button onClick={starttimer}>boshlash</button>
+      <p>{formatTime(seconds)}</p>
+    </div>
+  );
+};

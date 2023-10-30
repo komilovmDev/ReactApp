@@ -12,7 +12,8 @@ import { Menu } from '@mui/base/Menu';
 import { MenuButton } from '@mui/base/MenuButton';
 import { MenuItem } from '@mui/base/MenuItem';
 import { Dropdown } from '@mui/base/Dropdown';
-import {GoKebabHorizontal} from 'react-icons/go'
+import { GoKebabHorizontal } from 'react-icons/go'
+import { Timer } from '../deadline/Timer'
 
 
 export default function TaskCard({ item }) {
@@ -48,6 +49,18 @@ export default function TaskCard({ item }) {
         window.location.reload()
     }
 
+    const redCardAdd = async (id) => {
+        const response = await axios.post(`https://manager.zafarr.uz/to/${id}/tugatilmagan/`, null,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`,
+                },
+            }
+        )
+        window.location.reload()
+    }
+
 
     const boardValue = useRef()
 
@@ -57,9 +70,9 @@ export default function TaskCard({ item }) {
                 <div className="boximgtype">
                     <div className="modal">
                         <div className="dropdown">
-                            <button className="dropbtn"><GoKebabHorizontal/></button>
+                            <button className="dropbtn"><GoKebabHorizontal /></button>
                             <div className="dropdown-content" >
-                                <Button style={{ minWidth: 'auto' }} variant="text"><BiCheckboxMinus color='red' size={'30px'} /></Button>
+                                <Button onClick={() => redCardAdd(item.id)} style={{ minWidth: 'auto' }} variant="text"><BiCheckboxMinus color='red' size={'30px'} /></Button>
 
                                 <Button style={{ minWidth: 'auto' }} variant="text"><BsCheckLg color='green' size={'30px'} /></Button>
 
@@ -76,9 +89,9 @@ export default function TaskCard({ item }) {
                                     }}>ok</button>} text={'Board rename'}
                                     btn={<BiPencil color='black' size={'25px'} />}
                                 />
-
                             </div>
                         </div>
+                        <Timer />
                     </div>
                 </div>
                 <Link to={`/TaskInfo/${item.id}`}>
