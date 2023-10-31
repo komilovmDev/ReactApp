@@ -61,6 +61,19 @@ export default function TaskCard({ item }) {
         window.location.reload()
     }
 
+    const GreenCardAdd = async (id) => {
+        const response = await axios.post(`https://manager.zafarr.uz/to/${id}/bajarilganga/`, null,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`,
+                },
+            }
+        )
+        window.location.reload()
+    }
+
+    
 
     const boardValue = useRef()
 
@@ -74,7 +87,7 @@ export default function TaskCard({ item }) {
                             <div className="dropdown-content" >
                                 <Button onClick={() => redCardAdd(item.id)} style={{ minWidth: 'auto' }} variant="text"><BiCheckboxMinus color='red' size={'30px'} /></Button>
 
-                                <Button style={{ minWidth: 'auto' }} variant="text"><BsCheckLg color='green' size={'30px'} /></Button>
+                                <Button onClick={() => GreenCardAdd(item.id)} style={{ minWidth: 'auto' }} variant="text"><BsCheckLg color='green' size={'30px'} /></Button>
 
                                 <BasicModal main={<button className='saveModal' onClick={deleteBoard}>Delete</button>} text={'Delete Board ?'} btn={<AiOutlineDelete color='red' size={'25px'} />} />
 

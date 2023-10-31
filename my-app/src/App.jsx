@@ -7,10 +7,11 @@ import ProfelInfo from './pages/ProfilInfo/ProfelInfo'
 import User from './pages/User/User'
 import TaskInfo from './pages/TaskINfo/TaskInfo'
 import UserPage from './pages/UserPage/UserPage'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import UserTaskInfo from './pages/UserPage/UserTaskInfo'
 import UserCards from './pages/UserPage/UserCards';
 import ModalCss from './companents/Modal/Modal';
+import AppContext from './context/AppContext'
 
 function App() {
 
@@ -51,28 +52,33 @@ function App() {
   setSecureIsAdmin(true);
 
 
+  const [boardChange, setBoardChange] = useState('active')
+
+  
   return (
     <>
-      <Routes>
-        <Route path='/login' element={<Login />} />
-        {
-          is_admin === 'true' ? (
-            <>
-              <Route path='/' element={<Home />} />
-              <Route path='/Profil' element={<ProfelInfo />} />
-              <Route path='/user' element={<User />} />
-              <Route path='/TaskInfo/:id' element={<TaskInfo />} />
-              <Route path='/Modal' element={<ModalCss/>} />
-            </>
-          ) : (
-            <>
-              <Route path='/UserTaskInfo/:id' element={<UserTaskInfo />} />
-              <Route path='/Profil' element={<ProfelInfo />} />
-              <Route path='/' element={<UserPage />} />
-            </>
-          )
-        }
-      </Routes>
+      <AppContext.Provider value={{ boardChange, setBoardChange }}>
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          {
+            is_admin === 'true' ? (
+              <>
+                <Route path='/' element={<Home />} />
+                <Route path='/Profil' element={<ProfelInfo />} />
+                <Route path='/user' element={<User />} />
+                <Route path='/TaskInfo/:id' element={<TaskInfo />} />
+                <Route path='/Modal' element={<ModalCss />} />
+              </>
+            ) : (
+              <>
+                <Route path='/UserTaskInfo/:id' element={<UserTaskInfo />} />
+                <Route path='/Profil' element={<ProfelInfo />} />
+                <Route path='/' element={<UserPage />} />
+              </>
+            )
+          }
+        </Routes>
+      </AppContext.Provider>
     </>
   )
 }

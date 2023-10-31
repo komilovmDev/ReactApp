@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { BiSolidLock } from 'react-icons/bi'
 import './mainNav.css'
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import { Menu } from '@mui/base/Menu';
 import { MenuButton } from '@mui/base/MenuButton';
 import { MenuItem } from '@mui/base/MenuItem';
@@ -9,6 +9,7 @@ import { Dropdown } from '@mui/base/Dropdown';
 import { ImEarth } from 'react-icons/im';
 import axios from 'axios';
 import { useState , useEffect } from 'react';
+import AppContext from '../../context/AppContext';
 
 
 export default function MainNav({ setTaskData, taskData }) {
@@ -64,15 +65,15 @@ export default function MainNav({ setTaskData, taskData }) {
             console.error("Error:", error);
         }
     };
-
+    const {boardChange , setBoardChange} = useContext(AppContext)
 
     return (
         <>
             <div className="mainNav">
                 <div style={{display: 'flex' , gap: '10px'}}>
-                    <button>Active Boards</button>
-                    <button style={{background: 'green'}}>Check Boards</button>
-                    <button style={{background: '#ED3147'}}>Error Bords</button></div>
+                    <button onClick={() => setBoardChange('active')}>Active Boards</button>
+                    <button onClick={() => setBoardChange('green')} style={{background: 'green'}}>Check Boards</button>
+                    <button onClick={() => setBoardChange('red')} style={{background: '#ED3147'}}>Error Bords</button></div>
                 <button onClick={() => closeRef.current.classList.remove('none')}>+ Add</button>
             </div>
             <div ref={closeRef} className="mainNavModel none">

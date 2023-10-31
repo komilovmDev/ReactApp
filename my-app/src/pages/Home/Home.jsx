@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MainCard from "../../companents/mainCards/MainCard";
 import MainNav from "../../companents/mainNav/MainNav";
 import Navbar from "../../companents/navbar/Navbar";
@@ -7,9 +7,14 @@ import TaskCard from "../../companents/taskCard/TaskCard";
 import UserNav from "../../companents/userNav/UserNav";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import AppContext from "../../context/AppContext";
+import Flip from 'react-reveal/Flip'
 
 
 export default function Home() {
+
+    const { boardChange, setBoardChange } = useContext(AppContext)
+
 
     const getUser = async () => {
         try {
@@ -38,7 +43,7 @@ export default function Home() {
 
     const getBoard = async () => {
         try {
-            const response = await axios.get(`https://manager.zafarr.uz/routers/boards/`, {
+            const response = await axios.get(`https://manager.zafarr.uz/routers/all/boards/`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Token ${token}`,
@@ -50,9 +55,46 @@ export default function Home() {
         }
     }
 
+    const getRedBoard = async () => {
+        try {
+            const response = await axios.get(`https://manager.zafarr.uz/routers/all/tugatilmagan/`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`,
+                },
+            });
+            setTaskData(response.data);
+        } catch (error) {
+            console.error('Xatolik yuz berdi:', error);
+        }
+    }
+
+    const getGreenBoard = async () => {
+        try {
+            const response = await axios.get(`https://manager.zafarr.uz/routers/all/bajarilgan/` , {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`,
+                },
+            });
+            setTaskData(response.data);
+        }catch (error) {
+            console.error('Xatolik yuz berdi:' ,error);
+        }
+    }
+
     useEffect(() => {
-        getBoard();
-    }, []);
+        if (boardChange === 'active') {
+            getBoard();
+        } 
+        if (boardChange === 'green') {
+            getGreenBoard()
+        }
+        if (boardChange === 'red') {
+            getRedBoard();
+        }
+    }, [boardChange]);
+
 
 
 
@@ -64,7 +106,9 @@ export default function Home() {
                 {
                     taskData.map(item => (
                         <Link>
-                            <TaskCard item={item} />
+                            <Flip top>
+                                <TaskCard item={item} />
+                            </Flip >
                         </Link>
                     ))
                 }
