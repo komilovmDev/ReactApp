@@ -66,9 +66,6 @@ export default function Card({ ids, closeRef }) {
                                     <div className="details-modal">
                                         <div className="details-modal-close">
                                         </div>
-                                        <div className="details-modal-title">
-                                            <h1>My details modal</h1>
-                                        </div>
                                         <div className="details-modal-content">
                                             <Chat card={card} />
                                         </div>

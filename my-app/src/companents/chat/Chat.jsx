@@ -4,6 +4,8 @@ import img from './../../assets/vod.png';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { AiOutlinePaperClip } from 'react-icons/ai';
+import { LuSendHorizonal } from 'react-icons/lu';
+import { AiFillFile } from 'react-icons/ai';
 
 function Chat({ card }) {
   const [messages, setMessages] = useState([]);
@@ -155,8 +157,8 @@ function Chat({ card }) {
                 )}
                 <p id='text'>{message.text}</p>
                 {message.file && (
-                  <div>
-                    <a href={message.file} target="_blank" rel="noopener noreferrer">{'Filene Korish'}</a>
+                  <div className='LinkFileChat'>
+                    <a href={message.file} target="_blank" rel="noopener noreferrer"><AiFillFile/></a>
                   </div>
                 )}
               </div>
@@ -169,7 +171,7 @@ function Chat({ card }) {
         <input className='Habar' ref={messageValue} type="text" placeholder="Xabar kiritish..."  onChange={handleMessageChange} />
         <label className='ViborFile' type="file"><p><AiOutlinePaperClip/></p><input className='HabarFile' ref={fileValue} type="file" onChange={handleFileChange} /></label>
         
-        <button type='reset' onClick={() => postCommit()}>Yuborish</button>
+        <button type='reset' onClick={() => postCommit()}><LuSendHorizonal/></button>
       </div>
     </div>
   );
