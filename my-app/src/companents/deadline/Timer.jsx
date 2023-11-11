@@ -47,7 +47,7 @@ export const Timer = () => {
     const days = Math.floor(time / (24 * 60 * 60));
     const hours = Math.floor(time % (24 * 60 * 60));
 
-    return `${days} Д `;
+    return `${days} д `;
   };
 
   return (
@@ -58,18 +58,18 @@ export const Timer = () => {
           value={inputDate}
           onChange={(e) => setInputDate(e.target.value)}
         />
-        
+
       </label>
       <div className="Knopki">
-      <div className="KnopkiButton">
+        <div className="KnopkiButton">
           <button onClick={startTimer}>
-            <VscDebugStart />
+            Boshlash
           </button>
           <button onClick={stopTimer}>
-            <AiOutlinePauseCircle />
+            Pause
           </button>
           <button onClick={starttimer}>
-            <BsPlayCircle />
+            Davom
           </button>
         </div>
         <div className="Den">

@@ -4,6 +4,7 @@
 .timer {
     display: flex;
     flex-direction: column;
+    gap: 1vw;
 }
 
 .timer label{
@@ -20,9 +21,10 @@
 .KnopkiButton button{
     outline: none;
     border: none;
-    background:none;
+    padding: .2vw .2vw;
     color: #FF8B36;
-    font-size: 1vw;
+    font-size: .7vw;
+    border-radius: .5vw;
     cursor: pointer;
 }
 
@@ -58,17 +60,22 @@
     width: 100%;
     height: 4vw;
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
 }
 
 .Den {
+    width: 5vw;
+    height: 1.5vw;
     text-decoration: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: #FF8B36;
     font-size: 1vw;
+    padding: .2vw .2vw;
+    background: #ff8a3633;
+    border-radius: .5vw;
 }
 
 p {

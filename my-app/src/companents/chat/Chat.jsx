@@ -3,6 +3,7 @@ import './Chat.css';
 import img from './../../assets/vod.png';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { AiOutlinePaperClip } from 'react-icons/ai';
 
 function Chat({ card }) {
   const [messages, setMessages] = useState([]);
@@ -166,7 +167,8 @@ function Chat({ card }) {
       <div className="message-input">
         <img src={img} alt="img" />
         <input className='Habar' ref={messageValue} type="text" placeholder="Xabar kiritish..."  onChange={handleMessageChange} />
-        <input className='HabarFile' ref={fileValue} type="file" onChange={handleFileChange} />
+        <label className='ViborFile' type="file"><p><AiOutlinePaperClip/></p><input className='HabarFile' ref={fileValue} type="file" onChange={handleFileChange} /></label>
+        
         <button type='reset' onClick={() => postCommit()}>Yuborish</button>
       </div>
     </div>

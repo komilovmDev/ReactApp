@@ -13,14 +13,14 @@ html {
 .ModalCss {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 
 .Modalbutton {
   appearance: none;
-  background: #16a34a;
-  border-radius: 1VW;
+  background: #f37114c0;
+  border-radius: .5VW;
   color: white;
   cursor: pointer;
   display: inline-block;
@@ -30,10 +30,11 @@ html {
   align-items: center;
   height: 2vw;
   line-height: 1vw;
-  padding: 0 1em;
+  padding: .2vw .5vw;
+  transition: .3s;
 
   &:hover {
-    background-color: lighten(#16a34a, 2%);
+    background-color: lighten(#ff8a368a, 2%);
   }
 }
 

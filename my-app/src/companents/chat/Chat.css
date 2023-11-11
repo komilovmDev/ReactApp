@@ -129,3 +129,11 @@
   font-size: 15px;
   color: rgba(255, 68, 0, 0.37);
 }
+
+.ViborFile input{
+  display: none;
+}
+
+.ViborFile p{
+  font-size: 1.5vw;
+}
