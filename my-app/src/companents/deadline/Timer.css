@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+
+.timer {
+    display: flex;
+    flex-direction: column;
+}
+
+.timer label{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.KnopkiButton {
+    display: flex;
+    gap: .3vw;
+}
+
+.KnopkiButton button{
+    outline: none;
+    border: none;
+    background:none;
+    color: #FF8B36;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.KnopkiButton button:hover{
+    outline: none;
+    border: none;
+    background:none;
+    color: #ee6300;
+    cursor: pointer;
+}
+
+.KnopkiButton button:focus{
+    outline: none;
+    border: none;
+    background:none;
+    color: green;
+    cursor: pointer;
+}
+
+.timer input {
+  outline: none;
+  border: 0.1vw solid rgba(219, 169, 169, 0.623);
+  padding: 0.1vw 1vw;
+  font-size: .75vw;
+  border-radius: 0.5vw;
+  color: #FF8B36;
+  font-family: "Montserrat", sans-serif;
+  background: inherit;
+
+}
+
+.Knopki {
+    width: 100%;
+    height: 4vw;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.Den {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FF8B36;
+    font-size: 1vw;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+}

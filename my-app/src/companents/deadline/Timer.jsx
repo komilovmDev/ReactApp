@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import "./Timer.css";
+import { VscDebugStart } from "react-icons/vsc";
+import { BsPlayCircle } from "react-icons/bs";
+import { AiOutlinePauseCircle } from "react-icons/ai";
 
 export const Timer = () => {
   const [inputDate, setInputDate] = useState("");
@@ -41,23 +45,37 @@ export const Timer = () => {
 
   const formatTime = (time) => {
     const days = Math.floor(time / (24 * 60 * 60));
-    const hours = Math.floor((time % (24 * 60 * 60)) / (60 * 60));
+    const hours = Math.floor(time % (24 * 60 * 60));
 
-    return `${days} kun  ${hours} soat`;
+    return `${days} Д `;
   };
 
   return (
     <div className="timer">
-      <h2>Qolgan Vaqt!</h2>
-      <input
-        type="datetime-local"
-        value={inputDate}
-        onChange={(e) => setInputDate(e.target.value)}
-      />
-      <button onClick={startTimer}>Boshlash</button>
-      <button onClick={stopTimer}>To'xtatish</button>
-      <button onClick={starttimer}>boshlash</button>
-      <p>{formatTime(seconds)}</p>
+      <label htmlFor="">
+        <input
+          type="date"
+          value={inputDate}
+          onChange={(e) => setInputDate(e.target.value)}
+        />
+        
+      </label>
+      <div className="Knopki">
+      <div className="KnopkiButton">
+          <button onClick={startTimer}>
+            <VscDebugStart />
+          </button>
+          <button onClick={stopTimer}>
+            <AiOutlinePauseCircle />
+          </button>
+          <button onClick={starttimer}>
+            <BsPlayCircle />
+          </button>
+        </div>
+        <div className="Den">
+          <p>{formatTime(seconds)}</p>
+        </div>
+      </div>
     </div>
   );
 };

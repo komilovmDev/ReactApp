@@ -1,103 +1,103 @@
 .tskcard {
-    max-width: 280px;
-    height: auto;
-    border: 1px solid;
-    padding: 5px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    cursor: pointer;
+  max-width: 280px;
+  height: auto;
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .tskcard h4 {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .userView {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .userView img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border: 1px solid black;
-    border-radius: 3px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: 1px solid black;
+  border-radius: 3px;
 }
 
 .boximgtype .modal {
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-between; 
 }
 
 .redCard {
-    background-color: rgba(202, 85, 85, 0.144);
+  background-color: rgba(202, 85, 85, 0.144);
 }
 
 .greenCard {
-    background-color: #40C9A2;
+  background-color: #40c9a2;
 }
-
 
 /* dropdown */
 
 .dropbtn {
-    outline: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: var(--dark-gray-dark-gray-2, #252c32);
-    font-size: .9vw;
-    font-style: normal;
-    font-weight: 600;
-    font-family: "Montserrat", sans-serif;
-    padding-bottom: .3vw;
-  }
-  
-  .dropbtn:hover,
-  .dropbtn:focus {
-    border-bottom: 0.1vw solid transparent;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    width: auto;
-    height: auto;
-    position: absolute;
-    display: none;
-    border-radius: 8px;
-    border: 1px solid var(--gray-100, #F2F4F7);
-    background: var(--White, #FFF);
-    box-shadow: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
-    padding: .5vw .72vw;
-    z-index: 1;
-    left: -50px;
-  }
-  
-  .dropdown-content a {
-    width: 100%;
-    height: auto;
-    color: var(--gray-900, #101828);
-    text-decoration: none;
-    display: flex;
-  }
-  
-  .dropdown-content a:hover .ButtonChek{
-    display: flex;
-   
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: flex;
-    flex-direction: column;
-    gap: .41vw;
-  }
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--dark-gray-dark-gray-2, #252c32);
+  font-size: 0.9vw;
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 0.3vw;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  border-bottom: 0.1vw solid transparent;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: none;
+  border-radius: 8px;
+  border: 1px solid var(--gray-100, #f2f4f7);
+  background: var(--White, #fff);
+  box-shadow: 0px 4px 6px -2px rgba(16, 24, 40, 0.03),
+    0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+  padding: 0.5vw 0.72vw;
+  z-index: 1;
+  left: -50px;
+}
+
+.dropdown-content a {
+  width: 100%;
+  height: auto;
+  color: var(--gray-900, #101828);
+  text-decoration: none;
+  display: flex;
+}
+
+.dropdown-content a:hover .ButtonChek {
+  display: flex;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.41vw;
+}
