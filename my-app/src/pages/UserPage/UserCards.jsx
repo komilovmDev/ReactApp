@@ -5,9 +5,9 @@ import { AiOutlineDelete } from 'react-icons/ai'
 import BasicModal from '../../companents/BasicModal/Modal'
 import { BsCheckLg } from 'react-icons/bs'
 import { BiCheckboxMinus } from 'react-icons/bi'
-import {GoKebabHorizontal} from 'react-icons/go'
+import { GoKebabHorizontal } from 'react-icons/go'
 import Button from '@mui/material/Button';
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function UserCards({ item }) {
 
@@ -66,10 +66,20 @@ export default function UserCards({ item }) {
         )
         window.location.reload()
     }
+    
 
 
-
-    const boardValue = useRef()
+    const getChekBoard = async (id) => {
+        const response = await axios.post(`https://manager.zafarr.uz/to/${id}/chek/`, null,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`,
+                },
+            }
+        )
+        window.location.reload()
+    }
 
     return (
         <div className="UserCardBox" key={item.id}>
@@ -78,7 +88,7 @@ export default function UserCards({ item }) {
                     <div className="dropdown">
                         <button className="dropbtn"><GoKebabHorizontal /></button>
                         <div className="dropdown-content" >
-                            <Button onClick={() => GreenCardAdd(item.id)} style={{ minWidth: 'auto' }} variant="text"><BsCheckLg color='green' size={'30px'} /></Button>
+                            <Button onClick={() => getChekBoard(item.id)} style={{ minWidth: 'auto' }} variant="text"><BsCheckLg color='green' size={'30px'} /></Button>
                         </div>
                     </div>
                 </div>
