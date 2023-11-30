@@ -196,7 +196,7 @@ export default function TaskInfo() {
                         <div className="userAdd__userAdd">
                             <Dropdown>
                                 <MenuButton><button><BsPlusLg /></button></MenuButton>
-                                <Menu>
+                                <Menu className='userList'>
                                     {
                                         userData.map(item => (
                                             <button onClick={() => addUserBoard(item.id)}>{item.last_name} {item.first_name} {item.username}</button>

@@ -564,3 +564,27 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.userList ul {
+  min-width: 200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-top: 5px;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 9px;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.096);
+  overflow-y: auto;
+}
+
+.userList ul button {
+  width: 80%;
+  height: 35px;
+  border: none;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.205);
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+}
