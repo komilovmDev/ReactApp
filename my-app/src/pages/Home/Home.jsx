@@ -8,7 +8,6 @@ import UserNav from "../../companents/userNav/UserNav";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AppContext from "../../context/AppContext";
-import Flip from 'react-reveal/Flip'
 
 
 export default function Home() {
@@ -71,22 +70,22 @@ export default function Home() {
 
     const getGreenBoard = async () => {
         try {
-            const response = await axios.get(`https://manager.zafarr.uz/routers/all/bajarilgan/` , {
+            const response = await axios.get(`https://manager.zafarr.uz/routers/all/bajarilgan/`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Token ${token}`,
                 },
             });
             setTaskData(response.data);
-        }catch (error) {
-            console.error('Xatolik yuz berdi:' ,error);
+        } catch (error) {
+            console.error('Xatolik yuz berdi:', error);
         }
     }
 
     useEffect(() => {
         if (boardChange === 'active') {
             getBoard();
-        } 
+        }
         if (boardChange === 'green') {
             getGreenBoard()
         }
@@ -106,9 +105,7 @@ export default function Home() {
                 {
                     taskData.map(item => (
                         <Link>
-                            <Flip top>
-                                <TaskCard item={item} />
-                            </Flip >
+                            <TaskCard item={item} />
                         </Link>
                     ))
                 }
