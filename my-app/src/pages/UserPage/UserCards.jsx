@@ -78,8 +78,6 @@ export default function UserCards({ item }) {
                     <div className="dropdown">
                         <button className="dropbtn"><GoKebabHorizontal /></button>
                         <div className="dropdown-content" >
-                            <Button onClick={() => redCardAdd(item.id)} style={{ minWidth: 'auto' }} variant="text"><BiCheckboxMinus color='red' size={'30px'} /></Button>
-
                             <Button onClick={() => GreenCardAdd(item.id)} style={{ minWidth: 'auto' }} variant="text"><BsCheckLg color='green' size={'30px'} /></Button>
                         </div>
                     </div>
