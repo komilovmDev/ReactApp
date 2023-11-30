@@ -189,7 +189,7 @@ export default function TaskInfo() {
                         <div className="userAdd__users">
                             {
                                 boadUsers.map(item => (
-                                    <img src={item.profile_image} alt="" />
+                                    <img className='userImages' src={item.profile_image} alt="" />
                                 ))
                             }
                         </div>
