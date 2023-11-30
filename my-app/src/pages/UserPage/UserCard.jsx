@@ -5,6 +5,7 @@ import { Modal } from '@mui/base/Modal';
 import BasicModal from "../../companents/BasicModal/Modal";
 import ChatModal from "../../companents/ChatModal/ChatModal";
 import { AiOutlineDelete } from 'react-icons/ai'
+import { BsFillChatSquareDotsFill } from 'react-icons/bs'
 
 export default function UserCard({ ids, closeRef }) {
 
@@ -55,15 +56,12 @@ export default function UserCard({ ids, closeRef }) {
                                 <details>
                                     <summary>
                                         <div className="Modalbutton">
-                                            Comentariy
+                                            <BsFillChatSquareDotsFill />
                                         </div>
                                         <div className="details-modal-overlay"></div>
                                     </summary>
                                     <div className="details-modal">
                                         <div className="details-modal-close">
-                                        </div>
-                                        <div className="details-modal-title">
-                                            <h1>My details modal</h1>
                                         </div>
                                         <div className="details-modal-content">
                                             <Chat card={card} />
