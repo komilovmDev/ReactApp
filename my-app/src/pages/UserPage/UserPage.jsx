@@ -44,7 +44,6 @@ export default function Home() {
     }
 
     useEffect(() => {
-
         getBoard();
     }, []);
 
@@ -57,9 +56,7 @@ export default function Home() {
             <Navbar />
             <div className="mainCards">
                 {taskData.map(item => (
-                    <Link key={item.id} to={`/UserTaskInfo/${item.id}`}>
-                        <UserCards item={item} />
-                    </Link>
+                    <UserCards item={item} />
                 ))}
             </div>
         </>

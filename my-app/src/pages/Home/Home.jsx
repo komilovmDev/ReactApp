@@ -82,6 +82,20 @@ export default function Home() {
         }
     }
 
+    const getChekBoard = async () => {
+        try {
+            const response = await axios.get(`https://manager.zafarr.uz/routers/all/chek/`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`,
+                },
+            });
+            setTaskData(response.data)
+        } catch (error) {
+            console.error('Xatolik yuz berdi:' , error)
+        }
+    }
+
     useEffect(() => {
         if (boardChange === 'active') {
             getBoard();
@@ -91,6 +105,9 @@ export default function Home() {
         }
         if (boardChange === 'red') {
             getRedBoard();
+        }
+        if (boardChange === 'check') {
+            getChekBoard()
         }
     }, [boardChange]);
 
