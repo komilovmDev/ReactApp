@@ -49,32 +49,35 @@
 @media (max-width:768px) {
     .mainCards {
         width: 100%;
-        padding: 0 12vw;
+        height: 40vh;
+        padding: 4vw 5vw;
         display: flex;
         flex-wrap:wrap;
-        justify-content: flex-start;
-        gap: 20px;
+        justify-content: center;
+        gap: 2vw;
         align-items: flex-start;
+        overflow-y:auto ;
     }
     
     
     .mainCard {
-        width: 35vw;
-        height: 150px;
+        width: 100%;
+        height: auto;
         display: flex;
-        flex-direction: column;
         align-items: center;
+        flex-direction: row;
         justify-content: flex-start;
         gap: 10px;
         border-radius: 8px;
         cursor: pointer;
         box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.11);
         padding-top: 5px;
+        padding: 1vw 1vw;
     }
     
     .mainCard .mainCardImg {
-        width: 90px;
-        height: 90px;
+        width: 15vw;
+        height: 15vw;
         border: 1px solid #FF8B36;
         border-radius: 50%;
         display: flex;
@@ -85,13 +88,14 @@
     
     .mainCard img {
         display: inline-block;
-        max-width: 60px;
-        height: 90px;
+        width: 100%;
+        height:100%;
         object-fit: cover;
     }
     
     .mainCard h4 {
         text-align: center;
+        font-size: 3vw;
         color: #FF8B36;
     }
 }

@@ -9,3 +9,16 @@
     font-size: 19px;
     color: #FF8B36;
 }
+
+@media (max-width:768px) {
+    .userNav {
+        width: 93%;
+        margin:  0 auto;
+        border-top: 1px solid #FF8B36;
+    }
+    
+    .userNav h5 {
+        font-size: 19px;
+        color: #FF8B36;
+    }
+}

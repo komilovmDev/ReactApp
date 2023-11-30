@@ -157,13 +157,17 @@
     
     .mainNav button {
         background-color: #FF8B36;
-        width: 15vw;
-        height: auto;
+        width: 16vw;
+        height: 7vw;
         border-radius: 3px;
         border: none;
         cursor: pointer;
         color: white;
-        font-size: 0;
+        font-size: 2.2vw; 
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .mainNavModel {

@@ -68,29 +68,26 @@ export default function MainNav({ setTaskData, taskData }) {
       <div className="mainNav">
         <div style={{ display: "flex", gap: "10px" }}>
           <button onClick={() => setBoardChange("active")}>
-            Active Boards
+            Bajarilmoqda
           </button>
           <button
-            onClick={() => setBoardChange("check")}
-            style={{ background: "grey" }}
+            onClick={() => setBoardChange("check")} 
           >
-            Check Board
+            Tekshiruvda
           </button>
           <button
-            onClick={() => setBoardChange("green")}
-            style={{ background: "green" }}
+            onClick={() => setBoardChange("green")} 
           >
-            Done Boards
+            Bajarilgan
           </button>
           <button
-            onClick={() => setBoardChange("red")}
-            style={{ background: "#ED3147" }}
+            onClick={() => setBoardChange("red")} 
           >
-            Error Bords
+            Bajarilmagan
           </button>
         </div>
         <button onClick={() => closeRef.current.classList.remove("none")}>
-          + Add
+          Qoshish
         </button>
       </div>
       <div ref={closeRef} className="mainNavModel none">
