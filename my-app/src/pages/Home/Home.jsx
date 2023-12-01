@@ -118,7 +118,7 @@ export default function Home() {
         <>
             <Navbar />
             <MainNav taskData={taskData} setTaskData={setTaskData} />
-            <div className="mainCards">
+            <div className="MainttaskCard">
                 {
                     taskData.map(item => (
                         <Link>
