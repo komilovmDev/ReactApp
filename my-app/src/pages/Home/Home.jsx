@@ -8,6 +8,7 @@ import UserNav from "../../companents/userNav/UserNav";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AppContext from "../../context/AppContext";
+import Profil from "../profil/Profil";
 
 
 export default function Home() {
@@ -129,6 +130,7 @@ export default function Home() {
             </div>
             <UserNav />
             <div className="mainCards">
+                <Profil />
                 {
                     userData.map(item => (
                         <MainCard item={item} />
