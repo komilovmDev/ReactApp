@@ -76,6 +76,10 @@ export const Timer = () => {
           <p>{formatTime(seconds)}</p>
         </div>
       </div>
+      <div className="KnopkiRespons">
+
+      </div>
+
     </div>
   );
 };
