@@ -66,7 +66,7 @@ export default function MainNav({ setTaskData, taskData }) {
   return (
     <>
       <div className="mainNav">
-        <div style={{ display: "flex", gap: "10px" }}>
+        <div className="ButtonDivMain" style={{ display: "flex", gap: "10px" }}>
           <button onClick={() => setBoardChange("active")}>
             Bajarilmoqda
           </button>
