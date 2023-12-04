@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import './profil.css'
 
-export default function Profil() {
+export default function Profil({className , setClassName}) {
+
     return (
-        <div className="profilInfos">
+        <div className={className}>
             <div className="profilInfosBox">
                 <img src="https://manager.zafarr.uz/media/profile/2023/11/30/IMG_1260.JPG" alt="" />
                 <div className="profilInfosBox__userInfos">
@@ -11,7 +13,7 @@ export default function Profil() {
                     <div className="btns">
                         <button>Admin</button>
                         <button>Delete User</button>
-                        <button>Close</button>
+                        <button onClick={() => setClassName('close')}>Close</button>
                     </div>
                 </div>
             </div>                           

@@ -93,7 +93,7 @@ export default function Home() {
             });
             setTaskData(response.data)
         } catch (error) {
-            console.error('Xatolik yuz berdi:' , error)
+            console.error('Xatolik yuz berdi:', error)
         }
     }
 
@@ -112,7 +112,7 @@ export default function Home() {
         }
     }, [boardChange]);
 
-
+    const [className, setClassName] = useState("close")
 
 
     return (
@@ -130,10 +130,10 @@ export default function Home() {
             </div>
             <UserNav />
             <div className="mainCards">
-                <Profil />
+                <Profil className={className} setClassName={setClassName}/>
                 {
                     userData.map(item => (
-                        <MainCard item={item} />
+                        <MainCard className={className} setClassName={setClassName} item={item} />
                     ))
                 }
             </div>
