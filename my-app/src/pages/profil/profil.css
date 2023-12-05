@@ -30,3 +30,11 @@
 .close {
     display: none;
 }
+
+.profilInfosBox__userInfos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10px;
+}

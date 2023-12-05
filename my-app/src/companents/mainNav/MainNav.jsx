@@ -10,6 +10,9 @@ import { ImEarth } from "react-icons/im";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import AppContext from "../../context/AppContext";
+import { MenuButton as BaseMenuButton } from '@mui/base/MenuButton';
+import { MenuItem as BaseMenuItem, menuItemClasses } from '@mui/base/MenuItem';
+import { styled } from '@mui/system';
 
 export default function MainNav({ setTaskData, taskData }) {
   const closeRef = useRef();
@@ -63,29 +66,40 @@ export default function MainNav({ setTaskData, taskData }) {
   };
   const { boardChange, setBoardChange } = useContext(AppContext);
 
+  const createHandleMenuClick = (menuItem) => {
+    return () => {
+      console.log(`Clicked on ${menuItem}`);
+    };
+  };
+
   return (
     <>
       <div className="mainNav">
-        <div className="ButtonDivMain" style={{ display: "flex", gap: "10px" }}>
-          <button onClick={() => setBoardChange("active")}>
-            Bajarilmoqda
-          </button>
-          <button
-            onClick={() => setBoardChange("check")} 
-          >
-            Tekshiruvda
-          </button>
-          <button
-            onClick={() => setBoardChange("green")} 
-          >
-            Bajarilgan
-          </button>
-          <button
-            onClick={() => setBoardChange("red")} 
-          >
-            Bajarilmagan
-          </button>
-        </div>
+        <Dropdown>
+          <MenuButton>My account</MenuButton>
+          <Menu>
+            <div className="ButtonDivMain" style={{width: "100%", background: "white" , display: "flex", flexDirection: "column", gap: "10px", padding: "5px" }}>
+              <button onClick={() => setBoardChange("active")}>
+                Bajarilmoqda
+              </button>
+              <button
+                onClick={() => setBoardChange("check")}
+              >
+                Tekshiruvda
+              </button>
+              <button
+                onClick={() => setBoardChange("green")}
+              >
+                Bajarilgan
+              </button>
+              <button
+                onClick={() => setBoardChange("red")}
+              >
+                Bajarilmagan
+              </button>
+            </div>
+          </Menu>
+        </Dropdown>
         <button onClick={() => closeRef.current.classList.remove("none")}>
           Qoshish
         </button>

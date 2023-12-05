@@ -15,7 +15,6 @@ export default function Home() {
 
     const { boardChange, setBoardChange } = useContext(AppContext)
 
-
     const getUser = async () => {
         try {
             const response = await axios.get(`https://manager.zafarr.uz/users/`, {
