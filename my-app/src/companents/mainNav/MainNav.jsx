@@ -78,7 +78,7 @@ export default function MainNav({ setTaskData, taskData }) {
         <Dropdown>
           <MenuButton>MENU</MenuButton>
           <Menu>
-            <div className="ButtonDivMain" style={{width: "100%", background: "white" , display: "flex", flexDirection: "column", gap: "10px", padding: "5px" }}>
+            <div className="ButtonDivMain">
               <button onClick={() => setBoardChange("active")}>
                 Bajarilmoqda
               </button>
@@ -86,6 +86,11 @@ export default function MainNav({ setTaskData, taskData }) {
                 onClick={() => setBoardChange("check")}
               >
                 Tekshiruvda
+              </button>
+              <button
+                onClick={() => setBoardChange("red")}
+              >
+                Qutilmoqda
               </button>
               <button
                 onClick={() => setBoardChange("green")}
