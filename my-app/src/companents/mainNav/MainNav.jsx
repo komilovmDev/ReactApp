@@ -76,7 +76,7 @@ export default function MainNav({ setTaskData, taskData }) {
     <>
       <div className="mainNav">
         <Dropdown>
-          <MenuButton>My account</MenuButton>
+          <MenuButton>MENU</MenuButton>
           <Menu>
             <div className="ButtonDivMain" style={{width: "100%", background: "white" , display: "flex", flexDirection: "column", gap: "10px", padding: "5px" }}>
               <button onClick={() => setBoardChange("active")}>
