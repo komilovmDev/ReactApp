@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import AppContext from "../../context/AppContext";
 import Profil from "../profil/Profil";
+import OtdelUser from "../../companents/otedelUsers/OtdelUser";
 
 
 export default function Home() {
@@ -112,7 +113,7 @@ export default function Home() {
     }, [boardChange]);
 
     const [className, setClassName] = useState("close")
-
+    const [className2, setClassName2] = useState("close")
 
     return (
         <>
@@ -138,10 +139,10 @@ export default function Home() {
             </div>
             <UserNav text={'All Otdel'}/>
             <div className="mainCards">
-                <Profil className={className} setClassName={setClassName}/>
+                <OtdelUser className={className2} setClassName={setClassName2}/>
                 {
                     userData.map(item => (
-                        <MainCard className={className} setClassName={setClassName} item={item} />
+                        <MainCard className={className2} setClassName={setClassName2} item={item} />
                     ))
                 }
             </div>
