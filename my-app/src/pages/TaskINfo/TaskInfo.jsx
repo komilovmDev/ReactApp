@@ -19,6 +19,7 @@ import Chat from '../../companents/chat/Chat'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Card from './Card'
+import { FaUserPlus } from "react-icons/fa";
 import List from './List'
 
 
@@ -163,7 +164,7 @@ export default function TaskInfo() {
             <div className="ProfileNav">
                 <div className="profilNavLeft">
                     <div className="taskStatusSelect">
-                        <button className='statusTaskBtn'>
+                        {/* <button className='statusTaskBtn'>
                             <Dropdown className='hello'>
                                 <MenuButton className='GlavBtn'><button className='dropOnBtn'><BiSolidLock /> <span>Private</span></button></MenuButton>
                                 <Menu className='dropMenu1'>
@@ -183,7 +184,7 @@ export default function TaskInfo() {
                                     </MenuItem>
                                 </Menu>
                             </Dropdown>
-                        </button>
+                        </button> */}
                     </div>
                     <div className="userAdd">
                         <div className="userAdd__users">
@@ -192,6 +193,18 @@ export default function TaskInfo() {
                                     <img className='userImages' src={item.profile_image} alt="" />
                                 ))
                             }
+                        </div>
+                        <div className="userAdd__userAdd">
+                            <Dropdown>
+                                <MenuButton><button><FaUserPlus /></button></MenuButton>
+                                <Menu className='userList'>
+                                    {
+                                        userData.map(item => (
+                                            <button onClick={() => addUserBoard(item.id)}>{item.last_name} {item.first_name} {item.username}</button>
+                                        ))
+                                    }
+                                </Menu>
+                            </Dropdown>
                         </div>
                         <div className="userAdd__userAdd">
                             <Dropdown>

@@ -127,7 +127,16 @@ export default function Home() {
                     ))
                 }
             </div>
-            <UserNav />
+            <UserNav text={'All User'}/>
+            <div className="mainCards">
+                <Profil className={className} setClassName={setClassName}/>
+                {
+                    userData.map(item => (
+                        <MainCard className={className} setClassName={setClassName} item={item} />
+                    ))
+                }
+            </div>
+            <UserNav text={'All Otdel'}/>
             <div className="mainCards">
                 <Profil className={className} setClassName={setClassName}/>
                 {
