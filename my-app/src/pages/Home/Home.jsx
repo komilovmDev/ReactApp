@@ -10,6 +10,7 @@ import axios from "axios";
 import AppContext from "../../context/AppContext";
 import Profil from "../profil/Profil";
 import OtdelUser from "../../companents/otedelUsers/OtdelUser";
+import OtdelCard from "../../companents/mainCards/OtedelCard";
 
 
 export default function Home() {
@@ -115,6 +116,23 @@ export default function Home() {
     const [className, setClassName] = useState("close")
     const [className2, setClassName2] = useState("close")
 
+
+    const [otedelData , setOtdelData] = useState([])
+    const getOtdel = async () => {
+        const response = await axios.get(`https://manager.zafarr.uz/routers/all/departaments/` , {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${token}`,
+            },
+        })
+        setOtdelData(response.data);
+        console.log(response.data);
+    }
+
+    useEffect(() => {
+        getOtdel()
+    }, [])
+
     return (
         <>
             <Navbar />
@@ -141,8 +159,8 @@ export default function Home() {
             <div className="mainCards">
                 <OtdelUser className={className2} setClassName={setClassName2}/>
                 {
-                    userData.map(item => (
-                        <MainCard className={className2} setClassName={setClassName2} item={item} />
+                    otedelData.map(item => (
+                        <OtdelCard className={className2} setClassName={setClassName2} item={item} />
                     ))
                 }
             </div>
