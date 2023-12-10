@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { BiSolidLock } from "react-icons/bi";
-import "./mainNav.css";
+import "./mainNav.scss";
 import { useContext, useRef } from "react";
 import { Menu } from "@mui/base/Menu";
 import { MenuButton } from "@mui/base/MenuButton";
@@ -75,6 +75,19 @@ export default function MainNav({ setTaskData, taskData }) {
   return (
     <>
       <div className="mainNav">
+        <div className="BurgerDrop">
+          <input id="toggle" type="checkbox"/>
+            <label class="toggle-container" for="toggle">
+              <span class="button button-toggle"></span>
+            </label>
+            <nav class="nav">
+              <a class="nav-item" href="">Dashboard</a>
+              <a class="nav-item" href="">History</a>
+              <a class="nav-item" href="">Statistics</a>
+              <a class="nav-item" href="">Settings</a>
+            </nav>
+
+        </div>
         <Dropdown>
           <MenuButton>MENU</MenuButton>
           <Menu>

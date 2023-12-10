@@ -4,11 +4,13 @@
     padding: 10px 15px;
     flex-wrap: wrap;
 }
+
 .rel {
     position: relative;
 }
+
 .userS .useR {
-    width: 120px ;
+    width: 120px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -63,3 +65,4 @@
     border: none;
     border-radius: 2px;
 }
+
