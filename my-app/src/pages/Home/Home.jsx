@@ -157,10 +157,12 @@ export default function Home() {
             </div>
             <UserNav text={'All Otdel'}/>
             <div className="mainCards">
-                <OtdelUser className={className2} setClassName={setClassName2}/>
                 {
                     otedelData.map(item => (
-                        <OtdelCard className={className2} setClassName={setClassName2} item={item} />
+                        <>
+                            <OtdelUser item={item} className={className2} setClassName={setClassName2}/>
+                            <OtdelCard className={className2} setClassName={setClassName2} item={item} />                       
+                        </>
                     ))
                 }
             </div>
