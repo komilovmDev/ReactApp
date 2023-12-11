@@ -415,7 +415,7 @@
     .nav-container .hamburger-lines .line {
       display: block;
       height: 4px;
-      width: 100%;
+      width:100%;
       border-radius: 10px;
       background: #0e2431;
     }
@@ -481,5 +481,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    .menu-items button{
+        width: 40vw;
+    }
+
+    .menu-items .ButtonDivMain {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: center;
+      box-shadow: none;
     }
 }
