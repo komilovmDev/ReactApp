@@ -76,51 +76,83 @@ export default function MainNav({ setTaskData, taskData }) {
     <>
       <div className="mainNav">
         <div className="BurgerDrop">
-          <input id="toggle" type="checkbox"/>
-            <label class="toggle-container" for="toggle">
-              <span class="button button-toggle"></span>
-            </label>
-            <nav class="nav">
-              <a class="nav-item" href="">Dashboard</a>
-              <a class="nav-item" href="">History</a>
-              <a class="nav-item" href="">Statistics</a>
-              <a class="nav-item" href="">Settings</a>
-            </nav>
-
-        </div>
-        <Dropdown>
-          <MenuButton>MENU</MenuButton>
-          <Menu>
-            <div className="ButtonDivMain">
-              <button onClick={() => setBoardChange("active")}>
-                Bajarilmoqda
-              </button>
-              <button
-                onClick={() => setBoardChange("check")}
-              >
-                Tekshiruvda
-              </button>
-              <button
-                onClick={() => setBoardChange("red")}
-              >
-                Qutilmoqda
-              </button>
-              <button
-                onClick={() => setBoardChange("green")}
-              >
-                Bajarilgan
-              </button>
-              <button
-                onClick={() => setBoardChange("red")}
-              >
-                Bajarilmagan
-              </button>
+          <nav>
+            <div class="navbarburg">
+              <div class="containerburg nav-container">
+                <input class="checkbox" type="checkbox" name="" id="" />
+                <div class="hamburger-lines">
+                  <span class="line line1"></span>
+                  <span class="line line2"></span>
+                  <span class="line line3"></span>
+                </div>
+                <div class="menu-items">
+                  <div className="ButtonDivMain">
+                    <button onClick={() => setBoardChange("active")}>
+                      Bajarilmoqda
+                    </button>
+                    <button
+                      onClick={() => setBoardChange("check")}
+                    >
+                      Tekshiruvda
+                    </button>
+                    <button
+                      onClick={() => setBoardChange("red")}
+                    >
+                      Qutilmoqda
+                    </button>
+                    <button
+                      onClick={() => setBoardChange("green")}
+                    >
+                      Bajarilgan
+                    </button>
+                    <button
+                      onClick={() => setBoardChange("red")}
+                    >
+                      Bajarilmagan
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </Menu>
-        </Dropdown>
-        <button onClick={() => closeRef.current.classList.remove("none")}>
-          Qoshish
-        </button>
+          </nav>
+        </div>
+        <div className="dropdownbtnmenu">
+          <Dropdown>
+            <MenuButton>MENU</MenuButton>
+            <Menu>
+              <div className="ButtonDivMain">
+                <button onClick={() => setBoardChange("active")}>
+                  Bajarilmoqda
+                </button>
+                <button
+                  onClick={() => setBoardChange("check")}
+                >
+                  Tekshiruvda
+                </button>
+                <button
+                  onClick={() => setBoardChange("red")}
+                >
+                  Qutilmoqda
+                </button>
+                <button
+                  onClick={() => setBoardChange("green")}
+                >
+                  Bajarilgan
+                </button>
+                <button
+                  onClick={() => setBoardChange("red")}
+                >
+                  Bajarilmagan
+                </button>
+              </div>
+            </Menu>
+          </Dropdown>
+        </div>
+        <div className="QoshishBtn">
+          <button onClick={() => closeRef.current.classList.remove("none")}>
+            Qoshish
+          </button>
+        </div>
       </div>
       <div ref={closeRef} className="mainNavModel none">
         <div className="mainNavModelCard">
