@@ -10,14 +10,13 @@
     justify-content: center;
 }
 .profilInfosBox {
-    width: 400px;
-    min-height: 500px;
+    width: 20vw;
+    min-height: 60%;
     background-color: white;
     border-radius: 8px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    flex-direction: column; 
+    align-content: space-between; 
 }
 .profilInfosBox img {
     width: 100%;
@@ -32,11 +31,53 @@
 }
 
 .profilInfosBox__userInfos {
-    width: 100%;
+    width: 100%; 
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding-left: 10px;
+    align-content: space-between;
+    gap: 4vw;
+    padding: 1vw 1.5vw;
+}
+
+.btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns button {
+    outline: none;
+    border: none;
+    background-color: #FF8B36;
+    padding: .5vw 1vw;
+    border-radius: .3vw;
+    color: white;
+    font-size: .8vw;
+    font-weight: 600;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.ProfilTextModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 5vw; 
+}
+
+.ProfilTextModal h3{
+    font-size: 1vw;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: black;
+    border-bottom: .1vw solid #FF8B36;
+}
+
+.ProfilTextModal p {
+    font-size: 1vw;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: grey; 
 }
 
 @media (max-width:768px) {
@@ -73,10 +114,51 @@
     }
     
     .profilInfosBox__userInfos {
-        width: 100%;
+        width: 100%; 
         display: flex;
         flex-direction: column;
-        gap: 2vw;
-        padding-left: 10px;
+        align-content: space-between;
+        gap: 18vw;
+        padding: 10px 20px;
+    }
+
+    .btns {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btns button {
+        outline: none;
+        border: none;
+        background-color: #FF8B36;
+        padding: 3vw;
+        border-radius: 2vw;
+        color: white;
+        font-size: 4vw;
+        font-weight: 600;
+        font-family: sans-serif;
+    }
+
+    .ProfilTextModal {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 15vw; 
+    }
+
+    .ProfilTextModal h3{
+        font-size: 5vw;
+        font-family: sans-serif;
+        font-weight: 500;
+        color: black;
+        border-bottom: .1vw solid #FF8B36;
+    }
+
+    .ProfilTextModal p {
+        font-size: 5vw;
+        font-family: sans-serif;
+        font-weight: 400;
+        color: grey; 
     }
 }
