@@ -96,7 +96,7 @@
 
   .UserCard {
     width: 80vw;
-    height: 35vh;
+    height: 90vw;
     overflow-y: auto;
     padding: 5vw;
     display: flex;
