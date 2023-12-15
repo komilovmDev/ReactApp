@@ -71,15 +71,12 @@
     }
     
     .MainttaskCard {
-        width: 100%;
+        width: 100vw;
         height: 40vh;
         padding: 3vw 9vw;
-        display: flex;
-        flex-wrap:wrap;
-        justify-content: flex-start;
-        gap: 2vw;
-        align-items: flex-start;
-        overflow-y:auto ;
+        display: flex; 
+        gap: 2vw; 
+        overflow-x:auto ;
     }
     
     .mainCard {
