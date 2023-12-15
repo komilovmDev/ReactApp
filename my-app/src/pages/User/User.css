@@ -101,7 +101,7 @@
     padding: 5vw;
     display: flex;
     flex-direction: column;
-    gap: 15vw;
+    gap: 55vw;
     border-radius: 5vw;
     cursor: pointer;
     position: relative;
@@ -115,7 +115,7 @@
 
   .Teaxt p {
     width: 100%;
-    font-size: 4vw;
+    font-size: 8vw;
     color: #FF8B36;
     word-wrap: wrap;
   }

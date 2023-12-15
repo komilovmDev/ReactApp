@@ -112,13 +112,6 @@ export default function TaskCard({ item }) {
                         <p>{item.title}</p>
                     </div>
                 </Link>
-                <div className="UserImg">
-                    {/* {
-                        item.users.map(data => (
-                            <img src={data.image} alt="" />
-                        ))
-                    } */}
-                </div>
             </div>
         </div>
     )

@@ -33,7 +33,7 @@
   align-items: center;
   flex-direction: row-reverse;
   align-items: flex-start;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .redCard {
@@ -100,4 +100,19 @@
   display: flex;
   flex-direction: column;
   gap: 0.41vw;
+}
+
+@media (max-width:768px) {
+  .dropbtn {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--dark-gray-dark-gray-2, #252c32);
+    font-size: 7vw;
+    font-style: normal;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: 0.3vw;
+  }
 }

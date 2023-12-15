@@ -89,7 +89,7 @@ p {
     .timer {
         display: flex;
         flex-direction: column;
-        gap: 3vw;
+        gap: 6vw;
     }
 
     .timer label {
@@ -99,8 +99,10 @@ p {
     }
 
     .KnopkiButton {
+        width: 100%;
         display: flex;
-        gap: .7vw;
+        justify-content: space-between;
+        gap: 2vw;
     }
 
     .KnopkiButton button {
@@ -108,7 +110,7 @@ p {
         border: none;
         padding: .2vw .2vw;
         color: #FF8B36;
-        font-size: 3vw;
+        font-size: 4.5vw;
         border-radius: .5vw;
         cursor: pointer;
     }
@@ -132,9 +134,10 @@ p {
     .timer input {
         outline: none;
         border: none;
-        padding: 0.1vw 1vw;
-        font-size: 4vw;
-        border-radius: 2.5vw;
+        padding: 0.3vw 7vw;
+        font-size: 5vw;
+        border-radius: 1vw;
+        border: .1vw solid #ee63002f;
         color: #FF8B36;
         font-family: "Montserrat", sans-serif;
         background: inherit;
@@ -148,18 +151,18 @@ p {
         height: auto;
         display: flex;
         flex-direction: column;
-        gap: 1vw;
+        gap: 5vw;
     }
 
     .Den {
-        width: 50%;
-        height: 5vw;
+        width: 40%;
+        height: 10vw;
         text-decoration: none;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         color: #FF8B36;
-        font-size: 4vw;
+        font-size: 7vw;
         padding: .2vw .2vw;
         background: #ff8a3633;
         border-radius: 1.5vw;
