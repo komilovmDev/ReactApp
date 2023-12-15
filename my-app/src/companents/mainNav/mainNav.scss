@@ -490,8 +490,22 @@
     }
 
     .menu-items button{
-        width: 40vw;
+        width: 50vw;
+        height: 10vw;
+        border: .1vw solid #FF8B36;
+        background: none;
+        color: #FF8B36;
+        font-size: 4vw;
     }
+
+    .menu-items button:hover,
+    .menu-items button:focus{
+      width: 50vw;
+      border: .1vw solid #FF8B36;
+      background: #FF8B36;
+      color: #ffff;
+      font-size: 4vw;
+  }
 
     .menu-items .ButtonDivMain {
       width: 100%;

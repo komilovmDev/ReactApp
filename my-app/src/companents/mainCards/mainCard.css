@@ -75,7 +75,7 @@
         height: 100vw;
         padding: 3vw 9vw;
         display: flex; 
-        gap: 2vw; 
+        gap: 9vw; 
         overflow-x:auto ;
     }
     

@@ -86,7 +86,7 @@ export default function ProfelInfo() {
       <Navbar />
       <div className="PersolalContainer">
         <div className="PersonalTitle">
-          <h1>Personal Info</h1>
+          <h1>Men haqimda</h1>
         </div>
         {userInfos.map((item) => (
           <div className="PersonalInfoBox" key={item.id}>
