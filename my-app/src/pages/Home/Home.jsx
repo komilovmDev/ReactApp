@@ -10,6 +10,7 @@ import axios from "axios";
 import AppContext from "../../context/AppContext";
 import Profil from "../profil/Profil";
 import OtdelUser from "../../companents/otedelUsers/OtdelUser";
+import React from "react";
 import OtdelCard from "../../companents/mainCards/OtedelCard";
 
 
@@ -117,9 +118,9 @@ export default function Home() {
     const [className2, setClassName2] = useState("close")
 
 
-    const [otedelData , setOtdelData] = useState([])
+    const [otedelData, setOtdelData] = useState([])
     const getOtdel = async () => {
-        const response = await axios.get(`https://manager.zafarr.uz/routers/all/departaments/` , {
+        const response = await axios.get(`https://manager.zafarr.uz/routers/all/departaments/`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Token ${token}`,
@@ -146,22 +147,22 @@ export default function Home() {
                     ))
                 }
             </div>
-            <UserNav text={'All User'}/>
+            <UserNav text={'All User'} />
             <div className="mainCards">
-                <Profil className={className} setClassName={setClassName}/>
-                {
-                    userData.map(item => (
+                {userData.map(item => (
+                    <React.Fragment key={item.id}>
                         <MainCard className={className} setClassName={setClassName} item={item} />
-                    ))
-                }
+                    </React.Fragment>
+                ))}
+
             </div>
-            <UserNav text={'All Otdel'}/>
+            <UserNav text={'All Otdel'} />
             <div className="mainCards">
                 {
                     otedelData.map(item => (
                         <>
-                            <OtdelUser item={item} className={className2} setClassName={setClassName2}/>
-                            <OtdelCard className={className2} setClassName={setClassName2} item={item} />                       
+                            <OtdelUser item={item} className={className2} setClassName={setClassName2} />
+                            <OtdelCard className={className2} setClassName={setClassName2} item={item} />
                         </>
                     ))
                 }
