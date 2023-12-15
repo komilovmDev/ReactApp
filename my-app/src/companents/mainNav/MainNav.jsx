@@ -163,31 +163,8 @@ export default function MainNav({ setTaskData, taskData }) {
             X
           </button>
           <input ref={inputRef} type="text" placeholder="Add board title" />
-          <Dropdown className="Privat">
-            <MenuButton className="PrivatBtn">
-              <button className="PrivatOnBtn">
-                <BiSolidLock /> <span>Private</span>
-              </button>
-            </MenuButton>
-            <Menu className="dropMenu1">
-              <div className="tskSelectorTitle">
-                <h3>Visibility</h3>
-                <p>Choose who can see this board</p>
-              </div>
-              <MenuItem className="dropBtn">
-                <ImEarth color="#61BD4F" />
-                <span>Public</span>
-                <p>Anyone can see this board. Only board members can edit</p>
-              </MenuItem>
-              <MenuItem className="dropBtn">
-                <BiSolidLock color="#EB5A46" />
-                <span>Private</span>
-                <p>Only board members can see and edit this board</p>
-              </MenuItem>
-            </Menu>
-          </Dropdown>
           <div className="btns">
-            <button className="btns1">Canel</button>
+            <button onClick={() => closeRef.current.classList.add("none")} className="btns1">Cancel</button>
             <button
               className="btns2"
               onClick={() =>
