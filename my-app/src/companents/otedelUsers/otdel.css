@@ -1,7 +1,9 @@
 .userS {
     width: 100%;
-    display: flex;
-    padding: 10px 15px;
+    height: 90vw;
+    display: flex; 
+    padding: 2vw;
+    overflow-y: auto;
     flex-wrap: wrap;
 }
 
@@ -66,3 +68,12 @@
     border-radius: 2px;
 }
 
+@media (max-width:768px){
+    .OtedelName {
+        text-transform: capitalize;
+        text-align: center;
+        color: #FF8B36;
+        font-size: 7vw;
+        padding-top: 5px;
+    }
+}
