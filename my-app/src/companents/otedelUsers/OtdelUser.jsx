@@ -13,9 +13,13 @@ export default function OtdelUser({ className, setClassName, item }) {
                     {
                         item.users.map(data => (
                             <div className="useR">
-                                <img src={data.profile_image} alt="" />
-                                <h3>{data.username}</h3>
-                                <p>{data.kasbi}</p>
+                                <div className="Userimg">
+                                    <img src={data.profile_image} alt="" />
+                                </div>
+                                <div className="UserP">
+                                    <h3>{data.username}</h3>
+                                    <p>{data.kasbi}</p>
+                                </div>
                             </div>
                         ))
                     }
