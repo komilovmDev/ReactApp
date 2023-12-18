@@ -1,10 +1,41 @@
+:root {
+    --scrollbarBg: #fff;
+    --scrollbarThumb: #FF8B36;
+    --scrollbarWidth: .5vw;
+    --scrollbarBorder: 3px solid var(--scrollbarBg);
+    --scrollbarBorderRadius: calc(var(--scrollbarWidth) / 2);
+}
+
 .userS {
-    width: 100%;
-    height: 90vw;
-    display: flex; 
-    padding: 2vw;
+    scrollbar-width: var(--scrollbarWidth);
+    scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
+}
+
+.userS::-webkit-scrollbar {
+    width: var(--scrollbarWidth);
+}
+
+.userS::-webkit-scrollbar-track {
+    background: var(--scrollbarBg);
+    border-radius: var(--scrollbarBorderRadius);
+}
+
+.userS::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbarThumb);
+    border-radius: var(--scrollbarBorderRadius);
+    border: var(--scrollbarBorder);
+}
+
+
+.userS {
+    border: .1vw solid #FF8B36;
+    border-radius: 1vw;
+    width: 90%;
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
     overflow-y: auto;
-    flex-wrap: wrap;
 }
 
 .rel {
@@ -12,63 +43,90 @@
 }
 
 .userS .useR {
-    width: 120px;
-    height: auto;
+    width: 100%;
+    height: 3vw;
+    display: flex;
+    align-items: center; 
+    align-content: center
+    ;
+    justify-content: flex-start;
+    gap: 1vw;
+    padding-bottom: 30px;
+    -webkit-box-shadow: 0px 0px 21px -8px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 21px -8px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 21px -8px rgba(34, 60, 80, 0.2);
+}
+
+.UserP {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    padding-bottom: 30px;
+    align-items: flex-start;
 }
 
-.userS .useR img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
+.Userimg {
+    width: 3vw;
+    height: 3vw;
     border-radius: 50%;
+    overflow: hidden;
+    display: ;
 }
+
+.Userimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .userS .useR h3 {
-    font-size: 16px;
+    font-size: 1vw;
     text-align: center;
 }
 
 .OtedelName {
-    font-size: 24px;
+    text-transform: capitalize;
+    text-align: center;
+    color: #FF8B36;
+    font-size: 2vw;
     padding-top: 5px;
 }
 
 .userS .useR p {
-    font-size: 13px;
+    font-size: .7vw;
     text-align: center;
 }
 
 .plusOtdel {
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: red;
     color: white;
-    background-color: #2f80ed;
+    width: 4vw;
+    height: 2vw;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 2px;
 }
 
 .closeBtn {
     position: absolute;
     bottom: 20px;
     right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: red;
     color: white;
-    padding: 4px 8px;
+    width: 4vw;
+    height: 2vw;
     border: none;
     border-radius: 2px;
 }
 
-@media (max-width:768px){
+@media (max-width:768px) {
     .OtedelName {
         text-transform: capitalize;
         text-align: center;
