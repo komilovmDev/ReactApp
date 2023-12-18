@@ -47,7 +47,8 @@
     height: 3vw;
     display: flex;
     align-items: center; 
-    align-content: center;
+    align-content: center
+    ;
     justify-content: flex-start;
     gap: 1vw;
     padding-bottom: 30px;
