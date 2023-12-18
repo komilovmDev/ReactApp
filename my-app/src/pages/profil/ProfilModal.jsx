@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import {MdDeleteOutline , MdOutlineAdminPanelSettings  } from 'react-icons/md'
+
 
 const style = {
     position: 'absolute',
@@ -31,12 +33,18 @@ export default function ProfilModal({ item }) {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        <img className='profilImg' src={item.profile_image} alt="" />
-                    </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        <h2>{item.username}</h2>
-                        <h4>{item.kasbi}</h4>
+                        <div className="mainProfilINfo">
+                            <img className='profilImg' src={item.profile_image} alt="" />
+                            <div className="mainProfilINfo__texts">
+                                <h2>{item.username}</h2>
+                                <h4>{item.kasbi}</h4>
+                            </div>
+                            <div className="mainProfilINfo__btns">
+                                <button className='red'>Delete User<MdDeleteOutline size={'18px'}/></button>
+                                <button className='orange'>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
+                            </div>
+                        </div>
                     </Typography>
                 </Box>
             </Modal>
