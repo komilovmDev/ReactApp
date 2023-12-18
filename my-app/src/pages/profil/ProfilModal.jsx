@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import {MdDeleteOutline , MdOutlineAdminPanelSettings  } from 'react-icons/md'
+import { MdDeleteOutline, MdOutlineAdminPanelSettings } from 'react-icons/md'
 
 
 const style = {
@@ -32,21 +32,25 @@ export default function ProfilModal({ item }) {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className='css-1wnsr1i'>
+                    <div id="modal-modal-description">
                         <div className="mainProfilINfo">
-                            <img className='profilImg' src={item.profile_image} alt="" />
-                            <div className="mainProfilINfo__texts">
-                                <h2>{item.username}</h2>
-                                <h4>{item.kasbi}</h4>
+                            <div className="ProfilModalImg">
+                                <img className='profilImg' src={item.profile_image} alt="" />
                             </div>
-                            <div className="mainProfilINfo__btns">
-                                <button className='red'>Delete User<MdDeleteOutline size={'18px'}/></button>
-                                <button className='orange'>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
+                            <div className="TextenButtonModal">
+                                <div className="mainProfilINfo__texts">
+                                    <h2>{item.username}</h2>
+                                    <h4>{item.kasbi}</h4>
+                                </div>
+                                <div className="mainProfilINfo__btns">
+                                    <button className='red'>Delete User<MdDeleteOutline size={'18px'} /></button>
+                                    <button className='orange'>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
+                                </div>
                             </div>
                         </div>
-                    </Typography>
-                </Box>
+                    </div>
+                </div>
             </Modal>
         </div>
     );
