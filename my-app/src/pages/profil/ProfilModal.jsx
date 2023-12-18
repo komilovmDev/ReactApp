@@ -16,24 +16,14 @@ const style = {
     p: 4,
 };
 
-const style2 = {
-    position: 'absolute',
-    left: '0'
-};
-
-
-const style3 = {
-    position: 'relative',
-};
- 
 export default function ProfilModal({ item }) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return (
-        <div key={item.id} sx={style3}>
-            <Button sx={style2} className='openModal' onClick={handleOpen}>Open modal</Button>
+        <div className='modalll' key={item.id}>
+            <Button className='openModal' onClick={handleOpen}></Button>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -42,10 +32,11 @@ export default function ProfilModal({ item }) {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        {item.username}
+                        <img className='profilImg' src={item.profile_image} alt="" />
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                        <h2>{item.username}</h2>
+                        <h4>{item.kasbi}</h4>
                     </Typography>
                 </Box>
             </Modal>
