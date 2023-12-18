@@ -11,6 +11,7 @@ import AppContext from "../../context/AppContext";
 import Profil from "../profil/Profil";
 import OtdelUser from "../../companents/otedelUsers/OtdelUser";
 import OtdelCard from "../../companents/mainCards/OtedelCard";
+import ProfilModal from "../profil/ProfilModal";
 
 
 export default function Home() {
@@ -152,7 +153,7 @@ export default function Home() {
                     userData.map(item => (
                         <>
                             <MainCard className={className} setClassName={setClassName} item={item} />
-                            <Profil className={className} setClassName={setClassName} item={item}/>
+                            <ProfilModal className={className} setClassName={setClassName} item={item}/>
                         </>
                     ))
                 }
