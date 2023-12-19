@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import {MdDeleteOutline , MdOutlineAdminPanelSettings  } from 'react-icons/md'
+import { MdDeleteOutline, MdOutlineAdminPanelSettings } from 'react-icons/md'
 
 
 const style = {
@@ -15,7 +15,7 @@ const style = {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    p: 4, 
+    p: 4,
 };
 
 export default function ProfilModal({ item }) {
@@ -41,7 +41,7 @@ export default function ProfilModal({ item }) {
                                 <h4>{item.kasbi}</h4>
                             </div>
                             <div className="mainProfilINfo__btns">
-                                <button className='red'>Delete User<MdDeleteOutline size={'18px'}/></button>
+                                <button className='red'>Delete User<MdDeleteOutline size={'18px'} /></button>
                                 <button className='orange'>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
                             </div>
                         </div>
