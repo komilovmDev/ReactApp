@@ -40,9 +40,6 @@ export default function ProfilModal({ item }) {
                             </div>
 
                             <div className="mainProfilINfo__btns">
-                                <button className='red'>Delete User<MdDeleteOutline size={'18px'} /></button>
-                                <button className='orange'>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
-
                                 <div className="TextenButtonModal">
                                     <div className="mainProfilINfo__texts">
                                         <h2>{item.username}</h2>
