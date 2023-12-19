@@ -164,6 +164,45 @@
     }
 }
 
+.css-1wnsr1i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    height: 35vw;
+    background-color: #fff;
+    border-radius: 1vw;
+    overflow: hidden;
+    box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+
+.css-79ws1d-MuiModal-root {
+    position: fixed;
+    z-index: 1300;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+}
+
+#modal-modal-description {
+    width: 100%;
+    height: 100%;
+}
+
+.TextenButtonModal {
+    width: 100%;
+    height: 13vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1vw;
+}
+
 .profilImg {
     width: 200px;
 }
@@ -182,15 +221,12 @@
 }
 
 .mainProfilINfo {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
-}
-
-.mainProfilINfo img {
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
 }
 
 .mainProfilINfo__texts {    
@@ -210,13 +246,15 @@
 .mainProfilINfo .mainProfilINfo__btns {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    justify-content: space-between;
 }
 
 .mainProfilINfo .mainProfilINfo__btns button {
-    padding: 6px 10px;
+    width: 8vw;
+    height: 2.5vw;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2px;
 }
 
@@ -235,3 +273,17 @@
     border-radius: 4px;
     cursor: pointer;
 } 
+
+.ProfilModalImg {
+    width: 100%;
+    height: 20vw;
+    margin: 0;
+    padding: 0;
+
+}
+
+.ProfilModalImg img {
+    width: 100%;
+    height: 100%;
+    
+}
