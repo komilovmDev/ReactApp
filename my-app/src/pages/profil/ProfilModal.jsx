@@ -68,7 +68,7 @@ export default function ProfilModal({ item }) {
               <div className="mainProfilINfo__btns">
                 <div className="TextenButtonModal">
                   <div className="mainProfilINfo__texts">
-                    <h2>{item.username}</h2>
+                    <h2>{item.username} {item.last_name}</h2>
                     <h4>{item.kasbi}</h4>
                   </div>
                   <div className="mainProfilINfo__btns">

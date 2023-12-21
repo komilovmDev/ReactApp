@@ -31,6 +31,7 @@
     cursor: pointer;
     box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.11);
     padding-top: 5px;
+    position: relative;
 }
 
 .mainCard .mainCardImg {
@@ -57,7 +58,6 @@
 }
 
 @media (max-width:768px) {
-
     .mainCards {
         width: 100%;
         height: 28vh;
@@ -117,4 +117,9 @@
         font-size: 3vw;
         color: #FF8B36;
     }
+}
+
+.adminStatus {
+    position: absolute;
+    left: 3px;
 }
