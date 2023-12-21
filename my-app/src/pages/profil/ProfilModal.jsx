@@ -48,6 +48,30 @@ export default function ProfilModal({ item }) {
       console.log(item.username);
     }
   };
+  const DeleteAdmin = async () => {
+    try {
+      const response = await axios.put(
+        `https://manager.zafarr.uz/user-to-admin/${item.username}/`,
+        {
+          "username": item.username,
+          "oddiy_admin": false ,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            "Authorization": `Token ${tokenw}`,
+          }
+        }
+      );
+
+      // Handle the response as needed, e.g., logging or updating state.
+      console.log('Request successful:', response.data);
+    } catch (error) {
+      // Handle errors, e.g., logging or showing an error message.
+      console.error('Error making PUT request:', error);
+      console.log(item.username);
+    }
+  };
 
   return (
     <div className='modalll' key={item.id}>
@@ -73,7 +97,7 @@ export default function ProfilModal({ item }) {
                   <div className="mainProfilINfo__btns">
                     <button className='red'>Delete User<MdDeleteOutline size={'18px'} /></button>
                     {
-                      item.oddiy_admin == true ? <button className='red' onClick={putAdmin}>Delete Admin<MdOutlineAdminPanelSettings size={'18px'} /></button> :                     <button className='orange' onClick={putAdmin}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
+                      item.oddiy_admin == true ? <button className='red' onClick={DeleteAdmin}>Delete Admin<MdOutlineAdminPanelSettings size={'18px'} /></button> : <button className='orange' onClick={putAdmin}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
                     }
                   </div>
                 </div>
