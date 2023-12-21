@@ -72,7 +72,9 @@ export default function ProfilModal({ item }) {
                   </div>
                   <div className="mainProfilINfo__btns">
                     <button className='red'>Delete User<MdDeleteOutline size={'18px'} /></button>
-                    <button className='orange' onClick={putAdmin}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
+                    {
+                      item.oddiy_admin == true ? <button className='red' onClick={putAdmin}>Delete Admin<MdOutlineAdminPanelSettings size={'18px'} /></button> :                     <button className='orange' onClick={putAdmin}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
+                    }
                   </div>
                 </div>
               </div>
