@@ -24,7 +24,6 @@ export default function ProfilModal({ item }) {
   const handleClose = () => setOpen(false);
 
   const tokenw = localStorage.getItem('accessToken');
-
   const putAdmin = async () => {
     try {
       const response = await axios.put(

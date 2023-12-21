@@ -9,7 +9,10 @@ export default function MainCard({ item, className, setClassName }) {
         <>
             <div onClick={() => setClassName('profilInfos')} className="mainCard" key={item.id}>
                 <div className="adminStatus">
-                    <MdAdminPanelSettings color='green'/>
+                    {
+                        item.oddiy_admin == true ?  <MdAdminPanelSettings color='green'/> : null
+                    }
+                   
                 </div>
                 <div className="mainCardImg">
                     <img src={item.profile_image} alt="" />
