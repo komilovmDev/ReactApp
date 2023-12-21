@@ -72,7 +72,9 @@ export default function ProfilModal({ item }) {
       console.log(item.username);
     }
   };
-
+  function refreshPage() {
+    window.location.reload(false);
+  }
   return (
     <div className='modalll' key={item.id}>
       <Button className='openModal' onClick={handleOpen}></Button>
@@ -97,7 +99,8 @@ export default function ProfilModal({ item }) {
                   <div className="mainProfilINfo__btns">
                     <button className='red'>Delete User<MdDeleteOutline size={'18px'} /></button>
                     {
-                      item.oddiy_admin == true ? <button className='red' onClick={DeleteAdmin}>Delete Admin<MdOutlineAdminPanelSettings size={'18px'} /></button> : <button className='orange' onClick={putAdmin}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
+                      item.oddiy_admin == true ? <button className='red' onClick={() => { DeleteAdmin(); refreshPage(); }}>Delete Admin<MdOutlineAdminPanelSettings size={'18px'} /></button> : <button className='orange' onClick={() => { putAdmin(); refreshPage(); }}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
+
                     }
                   </div>
                 </div>
