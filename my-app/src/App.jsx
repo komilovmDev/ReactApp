@@ -12,6 +12,7 @@ import UserTaskInfo from './pages/UserPage/UserTaskInfo'
 import UserCards from './pages/UserPage/UserCards';
 import ModalCss from './companents/Modal/Modal';
 import AppContext from './context/AppContext'
+import Footer from './companents/Footer/Footer';
 
 function App() {
 
@@ -79,6 +80,7 @@ function App() {
           }
         </Routes>
       </AppContext.Provider>
+      <Footer/>
     </>
   )
 }
