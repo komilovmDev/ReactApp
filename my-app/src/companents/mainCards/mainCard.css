@@ -6,10 +6,12 @@
     justify-content: flex-start;
     gap: 20px;
     align-items: flex-start;
-} 
+}
 
 .MainttaskCard {
     width: 50vw;
+    height: 32.5vw;
+    overflow-y: auto;
     margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
@@ -18,6 +20,22 @@
     align-items: flex-start;
 }
 
+.MainttaskCard::-webkit-scrollbar {
+    width: .2vw;
+    /* ширина scrollbar */
+}
+
+.MainttaskCard::-webkit-scrollbar-track {
+    background: white;
+    /* цвет дорожки */
+}
+
+.MainttaskCard::-webkit-scrollbar-thumb {
+    background-color: #FF8B36;
+    /* цвет плашки */
+    border-radius: 20px;
+    /* закругления плашки */ 
+}
 
 .mainCard {
     width: 120px;
@@ -63,22 +81,22 @@
         height: 28vh;
         padding: 1vw 5vw;
         display: flex;
-        flex-wrap:wrap;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 2vw;
         align-items: flex-start;
-        overflow-y:auto ;
+        overflow-y: auto;
     }
-    
+
     .MainttaskCard {
         width: 100vw;
         height: 100vw;
         padding: 3vw 9vw;
-        display: flex; 
-        gap: 9vw; 
-        overflow-x:auto ;
+        display: flex;
+        gap: 9vw;
+        overflow-x: auto;
     }
-    
+
     .mainCard {
         width: 100%;
         height: auto;
@@ -93,7 +111,7 @@
         padding-top: 5px;
         padding: 1vw 1vw;
     }
-    
+
     .mainCard .mainCardImg {
         width: 15vw;
         height: 15vw;
@@ -104,14 +122,14 @@
         justify-content: center;
         overflow: hidden;
     }
-    
+
     .mainCard img {
         display: inline-block;
         width: 100%;
-        height:100%;
+        height: 100%;
         object-fit: cover;
     }
-    
+
     .mainCard h4 {
         text-align: center;
         font-size: 3vw;
