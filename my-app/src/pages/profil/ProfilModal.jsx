@@ -30,7 +30,7 @@ export default function ProfilModal({ item }) {
         `https://manager.zafarr.uz/user-to-admin/${item.username}/`,
         {
           "username": item.username,
-          "oddiy_admin": true ,
+          "oddiy_admin": true,
         },
         {
           headers: {
@@ -40,6 +40,25 @@ export default function ProfilModal({ item }) {
         }
       );
 
+        const UserOpen = () => setOpen(true);
+        const UserClose = () => setOpen(false);
+      
+        const tokenw = localStorage.getItem('accessToken');
+        const PutUser = async () => {
+          try {
+            const response = await axios.put(
+              `https://manager.zafarr.uz/user-to-admin/${item.username}/`,
+              {
+                "username": item.username,
+                "oddiy_admin": true,
+              },
+              {
+                headers: {
+                  'Content-Type': 'application/json',
+                  "Authorization": `Token ${tokenw}`,
+                }
+              }
+              
       // Handle the response as needed, e.g., logging or updating state.
       console.log('Request successful:', response.data);
     } catch (error) {
@@ -54,7 +73,7 @@ export default function ProfilModal({ item }) {
         `https://manager.zafarr.uz/user-to-admin/${item.username}/`,
         {
           "username": item.username,
-          "oddiy_admin": false ,
+          "oddiy_admin": false,
         },
         {
           headers: {
@@ -97,7 +116,17 @@ export default function ProfilModal({ item }) {
                     <h4>{item.kasbi}</h4>
                   </div>
                   <div className="mainProfilINfo__btns">
-                    <button className='red'>Delete User<MdDeleteOutline size={'18px'} /></button>
+                    <button onClick={UserOpen} className='red'>Delete User<MdDeleteOutline size={'18px'} /></button>
+                    <Modal
+                      open={open}
+                      onClose={UserClose}
+                      aria-labelledby="modal-modal-title"
+                      aria-describedby="modal-modal-description"
+                    >
+                      <div className="div">
+
+                      </div>
+                    </Modal>
                     {
                       item.oddiy_admin == true ? <button className='red' onClick={() => { DeleteAdmin(); refreshPage(); }}>Delete Admin<MdOutlineAdminPanelSettings size={'18px'} /></button> : <button className='orange' onClick={() => { putAdmin(); refreshPage(); }}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
                     }

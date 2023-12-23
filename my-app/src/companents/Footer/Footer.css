@@ -1,8 +1,16 @@
 .Footer {
-    margin-top: 2vw;
+    margin-top: 10vw;
+    border-top: .2vw solid #FF8B36;
     width: 100%;
     height: auto;
-    background-color: #7a7979;
+    background-color: #c9c4c4;
+    padding: 2vw;
+}
 
-
+.Footer_Title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1vw;
+    color: ;
 }
