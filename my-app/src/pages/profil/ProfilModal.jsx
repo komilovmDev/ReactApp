@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -40,25 +41,6 @@ export default function ProfilModal({ item }) {
         }
       );
 
-        const UserOpen = () => setOpen(true);
-        const UserClose = () => setOpen(false);
-      
-        const tokenw = localStorage.getItem('accessToken');
-        const PutUser = async () => {
-          try {
-            const response = await axios.put(
-              `https://manager.zafarr.uz/user-to-admin/${item.username}/`,
-              {
-                "username": item.username,
-                "oddiy_admin": true,
-              },
-              {
-                headers: {
-                  'Content-Type': 'application/json',
-                  "Authorization": `Token ${tokenw}`,
-                }
-              }
-              
       // Handle the response as needed, e.g., logging or updating state.
       console.log('Request successful:', response.data);
     } catch (error) {
@@ -116,19 +98,25 @@ export default function ProfilModal({ item }) {
                     <h4>{item.kasbi}</h4>
                   </div>
                   <div className="mainProfilINfo__btns">
-                    <button onClick={UserOpen} className='red'>Delete User<MdDeleteOutline size={'18px'} /></button>
-                    <Modal
-                      open={open}
-                      onClose={UserClose}
-                      aria-labelledby="modal-modal-title"
-                      aria-describedby="modal-modal-description"
-                    >
-                      <div className="div">
-
+                    <a className='red' href="#popup1">Delete User<MdDeleteOutline size={'18px'} /></a>
+                    <div id="popup1" class="overlay">
+                      <div className="popup">
+                        <h2>Here i am</h2>
+                        <a className="closes" href="#">x</a>
+                        <div className="ModalContent">
+                          <div className="TextModalDelete">
+                            <h1>Delete ?</h1>
+                          </div>
+                          <div className="ButtonModalDelete">
+                            <button>Delete</button>
+                            <a className="NoneButton"  href="#" >No</a>
+                          </div>
+                        </div>
                       </div>
-                    </Modal>
+                    </div>
                     {
                       item.oddiy_admin == true ? <button className='red' onClick={() => { DeleteAdmin(); refreshPage(); }}>Delete Admin<MdOutlineAdminPanelSettings size={'18px'} /></button> : <button className='orange' onClick={() => { putAdmin(); refreshPage(); }}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
+
                     }
                   </div>
                 </div>
