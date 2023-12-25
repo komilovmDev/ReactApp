@@ -9,16 +9,18 @@
     align-items: center;
     justify-content: center;
 }
+
 .profilInfosBox {
     width: 20vw;
     min-height: 60%;
     background-color: white;
     border-radius: 8px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    align-content: space-between; 
+    align-content: space-between;
 }
+
 .profilInfosBox img {
     width: 100%;
     height: auto;
@@ -32,7 +34,7 @@
 }
 
 .profilInfosBox__userInfos {
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: space-between;
@@ -61,17 +63,17 @@
 
 .red {
     display: flex;
-    align-items:center;
+    align-items: center;
 }
 
 .ProfilTextModal {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 5vw; 
+    height: 5vw;
 }
 
-.ProfilTextModal h3{
+.ProfilTextModal h3 {
     font-size: 1vw;
     font-family: sans-serif;
     font-weight: 500;
@@ -83,7 +85,7 @@
     font-size: 1vw;
     font-family: sans-serif;
     font-weight: 400;
-    color: grey; 
+    color: grey;
 }
 
 @media (max-width:768px) {
@@ -98,15 +100,17 @@
         align-items: center;
         justify-content: center;
     }
+
     .profilInfosBox {
         width: 90%;
         min-height: 60%;
         background-color: white;
         border-radius: 8px;
         display: flex;
-        flex-direction: column; 
-        align-content: space-between; 
+        flex-direction: column;
+        align-content: space-between;
     }
+
     .profilInfosBox img {
         width: 100%;
         height: auto;
@@ -114,13 +118,13 @@
         border-top-left-radius: 8px;
         object-fit: contain;
     }
-    
+
     .close {
         display: none;
     }
-    
+
     .profilInfosBox__userInfos {
-        width: 100%; 
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-content: space-between;
@@ -150,10 +154,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 15vw; 
+        height: 15vw;
     }
 
-    .ProfilTextModal h3{
+    .ProfilTextModal h3 {
         font-size: 5vw;
         font-family: sans-serif;
         font-weight: 500;
@@ -165,7 +169,7 @@
         font-size: 5vw;
         font-family: sans-serif;
         font-weight: 400;
-        color: grey; 
+        color: grey;
     }
 }
 
@@ -182,7 +186,7 @@
     background-color: #fff;
     border-radius: 1vw;
     overflow: hidden;
-    box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
 }
 
 .css-79ws1d-MuiModal-root {
@@ -234,7 +238,7 @@
     gap: 10px;
 }
 
-.mainProfilINfo__texts {    
+.mainProfilINfo__texts {
     display: flex;
     flex-direction: column;
 }
@@ -277,20 +281,23 @@
     border: orange;
     border-radius: 4px;
     cursor: pointer;
-} 
+}
 
 .ProfilModalImg {
     width: 100%;
     height: 20vw;
     margin: 0;
     padding: 0;
+    -webkit-box-shadow: 0px 0px 51px -8px rgba(34, 60, 80, 0.12);
+    -moz-box-shadow: 0px 0px 51px -8px rgba(34, 60, 80, 0.12);
+    box-shadow: 0px 0px 51px -8px rgba(34, 60, 80, 0.12);
 
 }
 
 .ProfilModalImg img {
     width: 100%;
     height: 100%;
-    
+    object-fit: cover;
 }
 
 .overlay {
@@ -303,13 +310,14 @@
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
-  }
-  .overlay:target {
+}
+
+.overlay:target {
     visibility: visible;
     opacity: 1;
-  }
-  
-  .popup {
+}
+
+.popup {
     margin: 70px auto;
     padding: 20px;
     background: #fff;
@@ -317,14 +325,15 @@
     width: 30%;
     position: relative;
     transition: all 5s ease-in-out;
-  }
-  
-  .popup h2 {
+}
+
+.popup h2 {
     margin-top: 0;
     color: #333;
     font-family: Tahoma, Arial, sans-serif;
-  }
-  .popup .closes {
+}
+
+.popup .closes {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -333,17 +342,19 @@
     font-weight: bold;
     text-decoration: none;
     color: #333;
-  }
-  .popup .close:hover {
+}
+
+.popup .close:hover {
     color: #06D85F;
-  }
- 
-  
-  @media screen and (max-width: 700px){
-    .box{
-      width: 70%;
+}
+
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
     }
-    .popup{
-      width: 70%;
+
+    .popup {
+        width: 70%;
     }
-  }
+}
