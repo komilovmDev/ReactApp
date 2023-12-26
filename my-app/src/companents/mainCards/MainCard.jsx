@@ -68,7 +68,7 @@ export default function MainCard({ item, className, setClassName }) {
     }
     return (
         <>
-            <Button className='openModal' onClick={handleOpen}>
+            <Button className='openModal buttonModalCard' onClick={handleOpen}>
                 <div onClick={() => setClassName('profilInfos')} className="mainCard" key={item.id}>
                     <div className="adminStatus">
                         {
@@ -81,11 +81,14 @@ export default function MainCard({ item, className, setClassName }) {
                     </div>
                     <div className="MainCardNLP">
                         <div className="MainCardsText">
+                            <p>Ismi:</p>
                             <h4>{item.username}</h4>
-                            <p>{item.last_name}</p>
+                            <p>Familiyasi:</p>
+                            <h3>{item.last_name}</h3>
                         </div>
                         <div className="MainCardsProffession">
-                            <p>{item.kasbi}</p>
+                            <p>Kasbi:</p>
+                            <h3>{item.kasbi}</h3>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@
     background-color: rgba(0, 0, 0, 0.352);
     top: 0;
     left: 0;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,14 +220,6 @@
 
 .modalll {
     position: relative;
-}
-
-.modalll button {
-    width: 120px;
-    transform: translateX(-140px);
-    position: absolute;
-    background-color: rgba(255, 0, 0, 0);
-    height: 100px;
 }
 
 .mainProfilINfo {

@@ -1,27 +1,32 @@
 .mainCards {
     width: 50vw;
+    height: 20vw;
     margin: 30px auto;
-    display: flex;
+    display: flex; 
+    justify-content: space-between; 
+    overflow: auto;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
     align-items: flex-start;
+    text-align: start;
 }
 
 .MainttaskCard {
     width: 50vw;
-    height: 32.5vw;
+    height: 12.5vw;
     overflow-y: auto;
-    margin: 30px auto;
-    display: flex;
-    flex-wrap: wrap;
+    margin: 30px auto; 
+    display: flex; 
     justify-content: flex-start;
     gap: 20px;
     align-items: flex-start;
 }
 
+ 
+
 .MainttaskCard::-webkit-scrollbar {
     width: .2vw;
+    height: .3vw;
     /* ширина scrollbar */
 }
 
@@ -38,44 +43,72 @@
 }
 
 .mainCard {
-    width: 15vw;
-    height: 5vw;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+    width: 23vw;
+    height: 7vw;
+    display: flex; 
+    align-items:center;
+    justify-content: space-between;
+    gap: 2vw;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.11);
-    padding-top: 5px;
+    padding: .4vw .3vw;
     position: relative;
+}
+
+.MainCardNLP {
+    width: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    gap: 1vw;
 }
 
 .MainCardsText {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items:flex-start;
+    width: 50%;
 }
 
-.MainCardNLP {
+.MainCardsText p{ 
+    margin: 0;
+    padding: 0;
+    color:#969494;
+    font-size: .6vw;
+}
+
+.MainCardsText h4, h3{
+    color:#FF8B36;
+    font-size: .8vw;
+    text-align: start;
+}
+
+.MainCardsProffession {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items:flex-start;
+    width: 50%;
+}
+
+.MainCardsProffession p{
+    color:#969494;
+    font-size: .6vw;
 }
 
 .mainCard .mainCardImg {
-    width: 90px;
-    height: 90px;
-    border: 1px solid #FF8B36;
-    border-radius: 50%;
+    min-width: 4.5vw;
+    width: 6vw;
+    height: 5vw;
+    border: .1vw solid #FF8B36; 
+    border-radius:.5vw;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
-.mainCard img {
-    display: inline-block;
+.mainCardImg img { 
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -145,5 +178,7 @@
 
 .adminStatus {
     position: absolute;
-    left: 3px;
+    font-size: 1vw;
+    top: .5vw;
+    right: .5vw;
 }

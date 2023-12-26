@@ -152,8 +152,7 @@ export default function Home() {
                 {
                     userData.map(item => (
                         <>
-                            <MainCard className={className} setClassName={setClassName} item={item} />
-                            <ProfilModal className={className} setClassName={setClassName} item={item}/>
+                            <MainCard className={className} setClassName={setClassName} item={item} /> 
                         </>
                     ))
                 }
