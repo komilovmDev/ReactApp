@@ -10,7 +10,10 @@ export default function OtdelCard({ item , className , setClassName }) {
                 <div className="mainCardImg">
                     <img src={item.image} alt="" />
                 </div>
-                <h4>{item.title}</h4>
+                <div className="odelCardTitle">
+                    <p>Bolim Nomi:</p>
+                    <h4>{item.title}</h4>
+                </div>
             </div>
         </>
     )

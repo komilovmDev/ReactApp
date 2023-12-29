@@ -116,7 +116,6 @@ export default function ProfilModal({ item }) {
                     </div>
                     {
                       item.oddiy_admin == true ? <button className='red' onClick={() => { DeleteAdmin(); refreshPage(); }}>Delete Admin<MdOutlineAdminPanelSettings size={'18px'} /></button> : <button className='orange' onClick={() => { putAdmin(); refreshPage(); }}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
-
                     }
                   </div>
                 </div>
