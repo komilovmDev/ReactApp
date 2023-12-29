@@ -1,5 +1,6 @@
 import "./Footer.css";
 import { FaTelegramPlane } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
     return (
@@ -11,13 +12,23 @@ export default function Footer() {
                 <div className="LinkFooter">
                     <div className="Yunusoff">
                         <h1>Юнусов МухаммадАли</h1>
-                        <a href="https://t.me/shimimoryo"> <FaTelegramPlane /></a>
-                        <a href="tel:">+998991899991</a>
+                        <div className="YunusoffLink">
+                            <a href="https://t.me/shimimoryo"> <FaTelegramPlane /></a>
+                            <a href="https://www.instagram.com/kainssss?igsh=Z2UzdXF5eGpzaDli&utm_source=qr"><FaInstagram /></a>
+                        </div>
+                        <div className="YunusoffTell">
+                            <a href="tel:">+998991899991</a>
+                        </div>
                     </div>
                     <div className="Satipoff">
                         <h1>Сатипов Акбар</h1>
-                        <a href="https://t.me/satipoff"> <FaTelegramPlane /></a>
-                        <a href="tel:">+998335646404</a>
+                        <div className="SatipoffLink">
+                            <a href="https://t.me/satipoff"> <FaTelegramPlane /></a>
+                            <a href="https://www.instagram.com/kainssss?igsh=Z2UzdXF5eGpzaDli&utm_source=qr"><FaInstagram /></a>
+                        </div>
+                        <div className="SatipoffTell">
+                            <a href="tel:">+998335646404</a>
+                        </div>
                     </div>
                 </div>
             </div>
