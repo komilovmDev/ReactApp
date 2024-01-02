@@ -17,7 +17,7 @@ export default function Footer() {
                             <a href="https://www.instagram.com/kainssss?igsh=Z2UzdXF5eGpzaDli&utm_source=qr"><FaInstagram /></a>
                         </div>
                         <div className="YunusoffTell">
-                            <a href="tel:">+998991899991</a>
+                            <a href="tel:">+998(99)189-99-91</a>
                         </div>
                     </div>
                     <div className="Satipoff">
@@ -27,7 +27,7 @@ export default function Footer() {
                             <a href="https://www.instagram.com/kainssss?igsh=Z2UzdXF5eGpzaDli&utm_source=qr"><FaInstagram /></a>
                         </div>
                         <div className="SatipoffTell">
-                            <a href="tel:">+998335646404</a>
+                            <a href="tel:">+998(33)564-64-04</a>
                         </div>
                     </div>
                 </div>

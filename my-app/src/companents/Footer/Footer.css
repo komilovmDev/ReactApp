@@ -53,11 +53,39 @@
     border: .2vw solid #FF8B36;
 }
 .Yunusoff h1 {
-    font-size: 1vw;
-    border-bottom:.1vw solid #FF8B36;
+    font-size: 1vw; 
 }
 
 .Satipoff h1{
-    font-size: 1vw;
-    border-bottom:.1vw solid #FF8B36;
+    font-size: 1vw; 
+}
+
+.YunusoffLink, .YunusoffLink a {
+    display: flex;
+    gap: 1vw;
+    color:#fff;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+.YunusoffTell a {
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.5vw;
+    font-weight: 600; 
+}
+
+.SatipoffLink, .SatipoffLink a {
+    display: flex;
+    gap: 1vw;
+    color:#fff;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+.SatipoffTell a {
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.5vw;
+    font-weight: 600; 
 }
