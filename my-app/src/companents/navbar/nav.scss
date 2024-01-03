@@ -117,13 +117,38 @@
 }
 
 .dark {
-    background-color:grey;
+    background-color:#2d2d2d;
 
     .MainCardsText p{
         color:white;
     }
 
     .MainCardsProffession p {
+        color:white;
+    }
+
+    .mainCard {
+        background-color:grey;
+    }
+
+    .Footer {
+        background-color:#2d2d2d;
+    }
+
+    .navbar .navRight .userInfo {
+        background-color:grey;
+        color:white;
+    }
+
+    .UserCard {
+        background-color:grey;
+    }
+
+    .dropbtn {
+        color:white;
+    }
+
+    .odelCardTitle p {
         color:white;
     }
 }
