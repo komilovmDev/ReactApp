@@ -15,10 +15,10 @@
     width: 50vw;
     height: 12.5vw;
     overflow-y: auto;
-    margin: 30px auto; 
+    margin: 2vw auto; 
     display: flex; 
     justify-content: flex-start;
-    gap: 20px;
+    gap: 1.5vw;
     align-items: flex-start;
 }
 

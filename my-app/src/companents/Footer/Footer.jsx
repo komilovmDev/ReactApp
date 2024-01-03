@@ -21,10 +21,20 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="Satipoff">
+                        <h1>Комилов Мухаммад</h1>
+                        <div className="SatipoffLink">
+                            <a href="https://t.me/mukhammad1346"> <FaTelegramPlane /></a>
+                            <a href="https://www.instagram.com/mukhammad_1346_?igsh=MXJhOTJjYjJxcnZhNQ=="><FaInstagram /></a>
+                        </div>
+                        <div className="SatipoffTell">
+                            <a href="tel:">+998(33)564-64-04</a>
+                        </div>
+                    </div>
+                    <div className="Satipoff">
                         <h1>Сатипов Акбар</h1>
                         <div className="SatipoffLink">
                             <a href="https://t.me/satipoff"> <FaTelegramPlane /></a>
-                            <a href="https://www.instagram.com/kainssss?igsh=Z2UzdXF5eGpzaDli&utm_source=qr"><FaInstagram /></a>
+                            <a href="https://www.instagram.com/satipoff_dev?igsh=amxrcTA4M3phdnM0"><FaInstagram /></a>
                         </div>
                         <div className="SatipoffTell">
                             <a href="tel:">+998(33)564-64-04</a>

@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function User() {
     return (
-        <>
-            <Navbar />
+        <> 
             <div className="User">
                 <div className="UserTitle">
                     <h1>

@@ -1,4 +1,4 @@
-import './nav.css'
+import './nav.scss'
 import rmIcon from '../../assets/rm.svg'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
@@ -7,6 +7,21 @@ import { useState, useEffect } from 'react';
 
 
 export default function Navbar() {
+
+
+    //Theme
+    const [theme, setTheme] = useState(false);
+
+    const handleClick =()=> {
+        setTheme(!theme)
+    }
+    useEffect(() => {
+        if (theme == true) {
+            document.body.classList.add("dark")
+        }else {
+            document.body.classList.remove("dark")
+        }
+    })
 
     // getUsername 
     const userID = localStorage.getItem('userID')
@@ -26,6 +41,16 @@ export default function Navbar() {
                 <Link to={'/'}><img src={rmIcon} alt="" /></Link>
                 <h3>Ranch Meneger</h3>
             </div>
+            <div className="Theme">
+                <div class="toggleWrapper">
+                    <input type="checkbox" class="dn" id="dn" />
+                    <label onClick={handleClick} for="dn" class="toggle">
+                        <span class="toggle__handler"> 
+                        </span> 
+                    </label>
+                </div>
+            </div>
+
             <div className="navRight">
                 <Link to={'/Profil'}>
                     {

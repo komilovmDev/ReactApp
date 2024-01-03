@@ -94,8 +94,18 @@ export default function ProfilModal({ item }) {
               <div className="mainProfilINfo__btns">
                 <div className="TextenButtonModal">
                   <div className="mainProfilINfo__texts">
-                    <h2>{item.username} {item.last_name}</h2>
-                    <h4>{item.kasbi}</h4>
+                    <div className="ModalName">
+                      <p>Ismi:</p>
+                      <h2>{item.username}</h2>
+                    </div>
+                    <div className="ModalLast">
+                      <p>Familiya:</p>
+                      <h2> {item.last_name}</h2>
+                    </div>
+                    <div className="ModalKasb">
+                      <p>Kasbi:</p>
+                      <h4>{item.kasbi}</h4>
+                    </div>
                   </div>
                   <div className="mainProfilINfo__btns">
                     <a className='red' href="#popup1">Delete User<MdDeleteOutline size={'18px'} /></a>
@@ -109,7 +119,7 @@ export default function ProfilModal({ item }) {
                           </div>
                           <div className="ButtonModalDelete">
                             <button>Delete</button>
-                            <a className="NoneButton"  href="#" >No</a>
+                            <a className="NoneButton" href="#" >No</a>
                           </div>
                         </div>
                       </div>

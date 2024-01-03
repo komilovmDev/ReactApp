@@ -82,8 +82,7 @@ export default function ProfelInfo() {
   };
 
   return (
-    <div className="ProfelInfo">
-      <Navbar />
+    <div className="ProfelInfo"> 
       <div className="PersolalContainer">
         <div className="PersonalTitle">
           <h1>Men haqimda</h1>

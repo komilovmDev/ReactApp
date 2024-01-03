@@ -13,8 +13,11 @@ import UserCards from './pages/UserPage/UserCards';
 import ModalCss from './companents/Modal/Modal';
 import AppContext from './context/AppContext'
 import Footer from './companents/Footer/Footer';
+import Navbar from './companents/navbar/Navbar';
 
 function App() {
+
+
 
   const token = localStorage.getItem('accessToken');
   const navigate = useNavigate()
@@ -55,9 +58,10 @@ function App() {
 
   const [boardChange, setBoardChange] = useState('active')
 
-  
+
   return (
     <>
+      <Navbar />
       <AppContext.Provider value={{ boardChange, setBoardChange }}>
         <Routes>
           <Route path='/login' element={<Login />} />
@@ -80,7 +84,7 @@ function App() {
           }
         </Routes>
       </AppContext.Provider>
-      <Footer/>
+      <Footer />
     </>
   )
 }

@@ -136,7 +136,6 @@ export default function Home() {
 
     return (
         <>
-            <Navbar />
             <MainNav taskData={taskData} setTaskData={setTaskData} />
             <div className="MainttaskCard">
                 {
