@@ -11,34 +11,34 @@ export default function Navbar() {
 
 
 
-// Theme
-const [theme, setTheme] = useState(false);
+    // Theme
+    const [theme, setTheme] = useState(false);
 
-const handleClick = () => {
-    // Toggle the theme value
-    const newTheme = !theme;
-    setTheme(newTheme);
+    const handleClick = () => {
+        // Toggle the theme value
+        const newTheme = !theme;
+        setTheme(newTheme);
 
-    // Save the theme value to local storage
-    localStorage.setItem("theme", JSON.stringify(newTheme));
-}
-
-useEffect(() => {
-    // Retrieve the theme value from local storage
-    const storedTheme = JSON.parse(localStorage.getItem("theme"));
-
-    // Check if there's a stored theme value and apply it
-    if (storedTheme != null) {
-        setTheme(storedTheme);
+        // Save the theme value to local storage
+        localStorage.setItem("theme", JSON.stringify(newTheme));
     }
 
-    // Apply the theme class to the body
-    if (theme) {
-        document.body.classList.add("dark");
-    } else {
-        document.body.classList.remove("dark");
-    }
-}, [theme]); // Add theme as a dependency to useEffect to prevent unnecessary executions
+    useEffect(() => {
+        // Retrieve the theme value from local storage
+        const storedTheme = JSON.parse(localStorage.getItem("theme"));
+
+        // Check if there's a stored theme value and apply it
+        if (storedTheme != null) {
+            setTheme(storedTheme);
+        }
+
+        // Apply the theme class to the body
+        if (theme) {
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+        }
+    }, [theme]); // Add theme as a dependency to useEffect to prevent unnecessary executions
 
 
     // getUsername 
@@ -55,20 +55,21 @@ useEffect(() => {
 
     return (
         <div className="navbar">
-            <div className="navleft">
-                <Link to={'/'}><img src={rmIcon} alt="" /></Link>
-                <h3>Ranch Meneger</h3>
-            </div>
-            <div className="Theme">
-                <div class="toggleWrapper">
-                    <input type="checkbox" class="dn" id="dn" />
-                    <label onClick={handleClick} for="dn" class="toggle">
-                        <span class="toggle__handler"> 
-                        </span> 
-                    </label>
+            <div className="navBirga">
+                <div className="navleft">
+                    <Link to={'/'}><img src={rmIcon} alt="" /></Link>
+                    <h3>Ranch Meneger</h3>
+                </div>
+                <div className="Theme">
+                    <div class="toggleWrapper">
+                        <input type="checkbox" class="dn" id="dn" />
+                        <label onClick={handleClick} for="dn" class="toggle">
+                            <span class="toggle__handler">
+                            </span>
+                        </label>
+                    </div>
                 </div>
             </div>
-
             <div className="navRight">
                 <Link to={'/Profil'}>
                     {

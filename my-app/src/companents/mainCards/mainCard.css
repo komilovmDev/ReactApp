@@ -17,6 +17,7 @@
     overflow-y: auto;
     margin: 2vw auto; 
     display: flex; 
+    flex-direction: row-reverse;
     justify-content: flex-start;
     gap: 1.5vw;
     align-items: flex-start;
