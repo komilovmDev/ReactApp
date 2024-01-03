@@ -141,7 +141,6 @@ export default function UserTaskInfo() {
 
     return (
         <>
-            <Navbar />
             <div className="ProfileNav">
                 <div className="profilNavLeft">
                     <div className="taskStatusSelect">

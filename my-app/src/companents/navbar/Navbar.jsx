@@ -9,19 +9,37 @@ import { useState, useEffect } from 'react';
 export default function Navbar() {
 
 
-    //Theme
-    const [theme, setTheme] = useState(false);
 
-    const handleClick =()=> {
-        setTheme(!theme)
+
+// Theme
+const [theme, setTheme] = useState(false);
+
+const handleClick = () => {
+    // Toggle the theme value
+    const newTheme = !theme;
+    setTheme(newTheme);
+
+    // Save the theme value to local storage
+    localStorage.setItem("theme", JSON.stringify(newTheme));
+}
+
+useEffect(() => {
+    // Retrieve the theme value from local storage
+    const storedTheme = JSON.parse(localStorage.getItem("theme"));
+
+    // Check if there's a stored theme value and apply it
+    if (storedTheme != null) {
+        setTheme(storedTheme);
     }
-    useEffect(() => {
-        if (theme == true) {
-            document.body.classList.add("dark")
-        }else {
-            document.body.classList.remove("dark")
-        }
-    })
+
+    // Apply the theme class to the body
+    if (theme) {
+        document.body.classList.add("dark");
+    } else {
+        document.body.classList.remove("dark");
+    }
+}, [theme]); // Add theme as a dependency to useEffect to prevent unnecessary executions
+
 
     // getUsername 
     const userID = localStorage.getItem('userID')

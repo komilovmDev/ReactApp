@@ -7,6 +7,7 @@ import UserNav from "../../companents/userNav/UserNav";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import UserCards from "./UserCards";
+import AdminNav from './AdminNav'
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true); // Yangi stavka
@@ -53,7 +54,7 @@ export default function Home() {
 
     return (
         <>
-            <Navbar />
+            <AdminNav taskData={taskData} setTaskData={setTaskData} />
             <div className="mainCards">
                 {taskData.map(item => (
                     <UserCards item={item} />
