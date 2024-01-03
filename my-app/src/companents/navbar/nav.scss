@@ -38,7 +38,7 @@
     cursor: pointer;
     border: none;
     background-color: transparent;
-    padding: .40vw 1.2vw;
+    padding: .20vw 1.2vw;
     border-radius: 1.2vw;
     padding-right: .8vw;
 }
@@ -156,6 +156,10 @@
 
     .odelCardTitle p {
         color:white;
+    }
+    .details-modal .details-modal-content {
+        background-color:#2d2d2d;
+        border:none;
     }
 }
 
