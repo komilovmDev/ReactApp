@@ -7,13 +7,9 @@ import BasicModal from '../BasicModal/Modal'
 import { BsCheckLg } from 'react-icons/bs'
 import { BiCheckboxMinus } from 'react-icons/bi'
 import Button from '@mui/material/Button';
-import { useRef } from 'react'
-import { Menu } from '@mui/base/Menu';
-import { MenuButton } from '@mui/base/MenuButton';
-import { MenuItem } from '@mui/base/MenuItem';
-import { Dropdown } from '@mui/base/Dropdown';
-import { GoKebabHorizontal } from 'react-icons/go'
-import { Timer } from '../deadline/Timer'
+import { useRef } from 'react' 
+import { GoKebabHorizontal } from 'react-icons/go' 
+import { useState, useEffect } from 'react'
 
 
 export default function TaskCard({ item }) {
@@ -31,7 +27,7 @@ export default function TaskCard({ item }) {
         )
         window.location.reload()
     }
-
+    
     const userID = localStorage.getItem('userID')
     const renameBoard = async (Id, Title) => {
         const response = await axios.put(`https://manager.zafarr.uz/routers/all/boards/${item.id}/`,
@@ -72,8 +68,37 @@ export default function TaskCard({ item }) {
         )
         window.location.reload()
     }
+    const [inputDate, setInputDate] = useState("");
+    const [seconds, setSeconds] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
 
-    
+    let interval;
+
+    useEffect(() => {
+        if (isRunning) {
+            interval = setInterval(() => {
+                if (seconds > 0) {
+                    setSeconds(seconds - 1);
+                }
+            }, 1000);
+        } else {
+            clearInterval(interval);
+        }
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [seconds, isRunning]);
+
+
+    const formatTime = (time) => {
+        const days = Math.floor(time / (24 * 60 * 60));
+        const hours = Math.floor(time % (24 * 60 * 60));
+
+        return `${days} д  `;
+    };
+
+
 
     const boardValue = useRef()
 
@@ -104,7 +129,11 @@ export default function TaskCard({ item }) {
                                 />
                             </div>
                         </div>
-                        <Timer />
+                        <div className="TaskTimer">
+                            <div className="Den">
+                                <p>{formatTime(seconds)}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <Link to={`/TaskInfo/${item.id}`}>
