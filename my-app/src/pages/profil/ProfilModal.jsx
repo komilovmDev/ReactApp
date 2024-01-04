@@ -102,10 +102,10 @@ export default function ProfilModal({ item }) {
                       <p>Familiya:</p>
                       <h2> {item.last_name}</h2>
                     </div>
-                    <div className="ModalKasb">
-                      <p>Kasbi:</p>
-                      <h4>{item.kasbi}</h4>
-                    </div>
+                  </div>
+                  <div className="ModalKasb">
+                    <p>Kasbi:</p>
+                    <h4>{item.kasbi}</h4>
                   </div>
                   <div className="mainProfilINfo__btns">
                     <a className='red' href="#popup1">Delete User<MdDeleteOutline size={'18px'} /></a>

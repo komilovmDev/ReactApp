@@ -13,10 +13,34 @@ import AppContext from "../../context/AppContext";
 import { MenuButton as BaseMenuButton } from '@mui/base/MenuButton';
 import { MenuItem as BaseMenuItem, menuItemClasses } from '@mui/base/MenuItem';
 import { styled } from '@mui/system';
+import { Timer } from "../deadline/Timer";
 
 export default function MainNav({ setTaskData, taskData }) {
   const closeRef = useRef();
   const inputRef = useRef();
+  const [inputDate, setInputDate] = useState("");
+  const [seconds, setSeconds] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+
+  let interval;
+
+  useEffect(() => {
+    if (isRunning) {
+      interval = setInterval(() => {
+        if (seconds > 0) {
+          setSeconds(seconds - 1);
+        }
+      }, 1000);
+    } else {
+      clearInterval(interval);
+    }
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [seconds, isRunning]);
+
+
 
   // function Addtack() {
   //     if (inputRef.current.value == '') {
@@ -162,7 +186,30 @@ export default function MainNav({ setTaskData, taskData }) {
           >
             X
           </button>
-          <input ref={inputRef} type="text" placeholder="Add board title" />
+          <label className="Vazifa-Inp" for="textref" >
+            <p>Vazifa:</p>
+            <input ref={inputRef} name="textref" type="text" placeholder="Add board title" />
+          </label>
+          <div className="Timer">
+            <label className="DateRegister" for="Date" >
+              <p>Boshlash:</p>
+              <input
+                type="date"
+                name="Date"
+                value={inputDate}
+                onChange={(e) => setInputDate(e.target.value)}
+              />
+            </label>
+            <label className="DateRegister" for="Date" >
+              <p>Tugatish:</p>
+              <input
+                type="date"
+                name="Date"
+                value={inputDate}
+                onChange={(e) => setInputDate(e.target.value)}
+              />
+            </label>
+          </div>
           <div className="btns">
             <button onClick={() => closeRef.current.classList.add("none")} className="btns1">Cancel</button>
             <button

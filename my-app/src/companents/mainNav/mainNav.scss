@@ -59,17 +59,31 @@
     border-radius: 3px;
 }
 
+.Vazifa-Inp {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  width: 100%;
+}
+
 .mainNavModelCard input {
-    margin-top: 30px;
     width: 100%;
     height: 35px;
     padding-left: 5px;
     border-radius: 5px;
+    border: none;
     outline: none;
-    border: 2px solid #828282;
     font-weight: 600;
     font-size: 15px;
 }
+
+.DateRegister {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
 
 .PrivatOnBtn {
   display: none;
