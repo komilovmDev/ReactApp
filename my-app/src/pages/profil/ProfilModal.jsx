@@ -94,13 +94,15 @@ export default function ProfilModal({ item }) {
               <div className="mainProfilINfo__btns">
                 <div className="TextenButtonModal">
                   <div className="mainProfilINfo__texts">
-                    <div className="ModalName">
-                      <p>Ismi:</p>
-                      <h2>{item.username}</h2>
-                    </div>
-                    <div className="ModalLast">
-                      <p>Familiya:</p>
-                      <h2> {item.last_name}</h2>
+                    <div className="MainProfilInfo__Text_Name">
+                      <div className="ModalName">
+                        <p>Ismi:</p>
+                        <h2>{item.username}</h2>
+                      </div>
+                      <div className="ModalLast">
+                        <p>Familiya:</p>
+                        <h2> {item.last_name}</h2>
+                      </div>
                     </div>
                     <div className="ModalKasb">
                       <p>Kasbi:</p>

@@ -27,7 +27,7 @@ export default function Footer() {
                             <a href="https://www.instagram.com/mukhammad_1346_?igsh=MXJhOTJjYjJxcnZhNQ=="><FaInstagram /></a>
                         </div>
                         <div className="SatipoffTell">
-                            <a href="tel:">+998(33)564-64-04</a>
+                            <a href="tel:">+998(93)255-71-19</a>
                         </div>
                     </div>
                     <div className="Satipoff">

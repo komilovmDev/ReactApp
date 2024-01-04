@@ -246,8 +246,8 @@
 }
 
 .mainProfilINfo .mainProfilINfo__btns {
-    display: flex;
-    flex-direction: row;
+    width: 50%;
+    display: flex; 
     justify-content: space-between;
 }
 
@@ -274,6 +274,10 @@
     border: orange;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.MainProfilInfo__Text_Name {
+    display: flex;
 }
 
 .ProfilModalImg { 
