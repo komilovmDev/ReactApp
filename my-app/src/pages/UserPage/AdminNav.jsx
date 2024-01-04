@@ -14,7 +14,7 @@ import { MenuButton as BaseMenuButton } from '@mui/base/MenuButton';
 import { MenuItem as BaseMenuItem, menuItemClasses } from '@mui/base/MenuItem';
 import { styled } from '@mui/system';
 
-export default function AdminNav({ setTaskData, taskData }) {
+export default function AdminNav({ setTaskData, taskData , getBoard}) {
   const closeRef = useRef();
   const inputRef = useRef();
 
@@ -59,7 +59,7 @@ export default function AdminNav({ setTaskData, taskData }) {
         }
       );
       console.log(response.data);
-      window.location.reload();
+      getBoard()
     } catch (error) {
       console.error("Error:", error);
     }
@@ -71,6 +71,8 @@ export default function AdminNav({ setTaskData, taskData }) {
       console.log(`Clicked on ${menuItem}`);
     };
   };
+
+
 
   return (
     <>
