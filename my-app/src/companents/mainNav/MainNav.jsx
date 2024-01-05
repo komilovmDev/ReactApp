@@ -21,6 +21,8 @@ export default function MainNav({ setTaskData, taskData }) {
   const [inputDate, setInputDate] = useState("");
   const [seconds, setSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+  const [currentDateTime, setCurrentDateTime] = useState(null);
+  const [currentHorseTime, setHourseDateTime] = useState(null);
 
   let interval;
 
@@ -39,30 +41,6 @@ export default function MainNav({ setTaskData, taskData }) {
       clearInterval(interval);
     };
   }, [seconds, isRunning]);
-
-
-
-  // function Addtack() {
-  //     if (inputRef.current.value == '') {
-  //         inputRef.current.classList.add('inError')
-  //         closeRef.classList.add('none')
-  //     } else {
-  //         const newTask = {
-  //             id: taskData.length + 1,
-  //             name: inputRef.current.value,
-  //             users: [
-  //                 {
-  //                     image: "https://img.a.transfermarkt.technology/portrait/big/8198-1685035469.png?lm=1"
-  //                 }
-  //             ]
-  //         };
-
-  //         setTaskData([...taskData, newTask])
-  //         inputRef.current.classList.remove('inError')
-  //         inputRef.current.value = null
-  //     }
-
-  // };
 
   const tokenw = localStorage.getItem("accessToken");
   const userID = localStorage.getItem("userID");
@@ -83,29 +61,38 @@ export default function MainNav({ setTaskData, taskData }) {
         }
       );
       console.log(response.data);
-      window.location.reload();
+
+      // Обновление данных без перезагрузки страницы
+      setTaskData([...taskData, response.data]);
+
+      closeRef.current.classList.add("none");
     } catch (error) {
       console.error("Error:", error);
     }
   };
 
-
   const { boardChange, setBoardChange } = useContext(AppContext);
 
-  const createHandleMenuClick = (menuItem) => {
-    return () => {
-      console.log(`Clicked on ${menuItem}`);
-    };
+  const handleButtonClick = () => {
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.getMonth() + 1;
+    const year = now.getFullYear();
+
+    const formattedDate = `${year}.${(month < 10 ? '0' : '') + month}.${(day < 10 ? '0' : '') + day}`;
+    const formattedDateTime = `${formattedDate}`;
+
+    setCurrentDateTime(formattedDateTime);
   };
 
-  ///DATATIMECOMPONENT
+  const handleButtonClickTime = () => {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const formattedTime = `${(hours < 10 ? '0' : '') + hours}:${(minutes < 10 ? '0' : '') + minutes}`;
 
-    const [currentDateTime, setCurrentDateTime] = useState(null);
-
-    const handleButtonClick = () => {
-      const now = new Date();
-      setCurrentDateTime(now.toLocaleString());
-    };
+    setHourseDateTime(formattedTime);
+  };
 
   return (
     <>
@@ -184,7 +171,7 @@ export default function MainNav({ setTaskData, taskData }) {
           </Dropdown>
         </div>
         <div className="QoshishBtn">
-          <button onClick={() => closeRef.current.classList.remove("none") + handleButtonClick}>
+          <button onClick={() => { closeRef.current.classList.remove("none"); handleButtonClick(); handleButtonClickTime()}}>
             Qoshish
           </button>
         </div>
@@ -204,7 +191,8 @@ export default function MainNav({ setTaskData, taskData }) {
           <div className="Timer">
             <label className="DateRegister" for="Date" >
               <p>Boshlash:</p>
-              {currentDateTime && <p>Текущая дата и время: {currentDateTime}</p>}
+              {currentDateTime && <p> {currentDateTime}</p>}
+              {currentHorseTime && <p> {currentHorseTime}</p>}
             </label>
             <label className="DateRegister" for="Date" >
               <p>Tugatish:</p>
