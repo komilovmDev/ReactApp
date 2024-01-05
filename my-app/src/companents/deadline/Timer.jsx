@@ -54,7 +54,7 @@ export const Timer = () => {
     <div className="timer">
       <label htmlFor="">
         <input
-          type="date"
+          type="datetime"
           value={inputDate}
           onChange={(e) => setInputDate(e.target.value)}
         />

@@ -88,6 +88,8 @@ export default function MainNav({ setTaskData, taskData }) {
       console.error("Error:", error);
     }
   };
+
+
   const { boardChange, setBoardChange } = useContext(AppContext);
 
   const createHandleMenuClick = (menuItem) => {
@@ -95,6 +97,15 @@ export default function MainNav({ setTaskData, taskData }) {
       console.log(`Clicked on ${menuItem}`);
     };
   };
+
+  ///DATATIMECOMPONENT
+
+    const [currentDateTime, setCurrentDateTime] = useState(null);
+
+    const handleButtonClick = () => {
+      const now = new Date();
+      setCurrentDateTime(now.toLocaleString());
+    };
 
   return (
     <>
@@ -173,7 +184,7 @@ export default function MainNav({ setTaskData, taskData }) {
           </Dropdown>
         </div>
         <div className="QoshishBtn">
-          <button onClick={() => closeRef.current.classList.remove("none")}>
+          <button onClick={() => closeRef.current.classList.remove("none") + handleButtonClick}>
             Qoshish
           </button>
         </div>
@@ -193,17 +204,12 @@ export default function MainNav({ setTaskData, taskData }) {
           <div className="Timer">
             <label className="DateRegister" for="Date" >
               <p>Boshlash:</p>
-              <input
-                type="date"
-                name="Date"
-                value={inputDate}
-                onChange={(e) => setInputDate(e.target.value)}
-              />
+              {currentDateTime && <p>Текущая дата и время: {currentDateTime}</p>}
             </label>
             <label className="DateRegister" for="Date" >
               <p>Tugatish:</p>
               <input
-                type="date"
+                type="datetime-local"
                 name="Date"
                 value={inputDate}
                 onChange={(e) => setInputDate(e.target.value)}
