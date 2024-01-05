@@ -45,9 +45,10 @@ export const Timer = () => {
 
   const formatTime = (time) => {
     const days = Math.floor(time / (24 * 60 * 60));
-    const hours = Math.floor(time % (24 * 60 * 60));
+    const hours = Math.floor((time % (24 * 60 * 60)) / 3600);
+    const minutes = Math.floor((time % 3600) / 60);
 
-    return `${days} д `;
+    return `${days} д  , ${hours}h  ${minutes} m`;
   };
 
   return (

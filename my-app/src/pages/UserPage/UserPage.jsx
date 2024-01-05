@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import MainCard from "../../companents/mainCards/MainCard";
 import MainNav from "../../companents/mainNav/MainNav";
 import Navbar from "../../companents/navbar/Navbar";
@@ -7,17 +8,18 @@ import UserNav from "../../companents/userNav/UserNav";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import UserCards from "./UserCards";
-import AdminNav from './AdminNav'
+import AdminNav from './AdminNav'; 
 
 export default function Home() {
-    const [isLoading, setIsLoading] = useState(true); // Yangi stavka
 
+
+    const [isLoading, setIsLoading] = useState(true);
     const [userData, setUserData] = useState([]);
     const [taskData, setTaskData] = useState([]);
     const token = localStorage.getItem('accessToken');
     const userID = localStorage.getItem('userID');
-
     const navigate = useNavigate();
+
 
     // const getUser = async () => {
     //     const response = await axios.get("https://manager.zafarr.uz/users/");
@@ -48,13 +50,35 @@ export default function Home() {
         getBoard();
     }, []);
 
+    const getUserInfo = async () => {
+        try {
+            const response = await axios.get(`https://manager.zafarr.uz/users/${userID}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`,
+                },
+            });
+            console.log(response.data);
+            setUserData(response.data);
+        } catch (error) {
+            console.error('Error fetching user information:', error);
+            // Handle errors if necessary
+        }
+    };
+
+    useEffect(() => {
+        getUserInfo();
+    }, []);
+
     if (isLoading) {
         return <p>Ma'lumotlar yuklanmoqda...</p>; // Ma'lumotlar yuklanishini kuzatamiz
     }
 
     return (
         <>
-            <AdminNav taskData={taskData} setTaskData={setTaskData} />
+            {
+                userData.oddiy_admin == true ? <AdminNav getBoard={getBoard} taskData={taskData} setTaskData={setTaskData} /> : null
+            }
             <div className="mainCards">
                 {taskData.map(item => (
                     <UserCards item={item} />
