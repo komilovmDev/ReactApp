@@ -110,8 +110,7 @@ export default function ProfilModal({ item }) {
                   <div className="mainProfilINfo__btns">
                     <a className='red' href="#popup1">Delete User<MdDeleteOutline size={'18px'} /></a>
                     <div id="popup1" class="overlay">
-                      <div className="popup">
-                        <h2>Here i am</h2>
+                      <div className="popup"> 
                         <a className="closes" href="#">x</a>
                         <div className="ModalContent">
                           <div className="TextModalDelete">
