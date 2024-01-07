@@ -83,6 +83,7 @@ export default function MainNav({ setTaskData, taskData }) {
     const formattedDateTime = `${formattedDate}`;
 
     setCurrentDateTime(formattedDateTime);
+    console.log(`${year}-${month}-${day}`  );
   };
 
   const handleButtonClickTime = () => {
@@ -93,6 +94,8 @@ export default function MainNav({ setTaskData, taskData }) {
 
     setHourseDateTime(formattedTime);
   };
+
+
 
   return (
     <>
@@ -200,7 +203,7 @@ export default function MainNav({ setTaskData, taskData }) {
                 type="datetime-local"
                 name="Date"
                 value={inputDate}
-                onChange={(e) => setInputDate(e.target.value)}
+                onChange={(e) => setInputDate(e.target.value) + console.log(e.target.value)}
               />
             </label>
           </div>
