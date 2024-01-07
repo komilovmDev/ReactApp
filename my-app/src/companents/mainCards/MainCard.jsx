@@ -122,7 +122,7 @@ export default function MainCard({ item, className, setClassName }) {
                                         </div>
                                     </div>
                                     <div className="mainProfilINfo__btns">
-                                        <a className='red' href="#popup1">Delete User<MdDeleteOutline size={'18px'} /></a>
+                                        <a className='red' href="#popup1">Foydalanuvchini O'chirish<MdDeleteOutline size={'18px'} /></a>
                                         <div id="popup1" class="overlay">
                                             <div className="popup">
                                                 <h2>Here i am</h2>
@@ -139,8 +139,7 @@ export default function MainCard({ item, className, setClassName }) {
                                             </div>
                                         </div>
                                         {
-                                            item.oddiy_admin == true ? <button className='red' onClick={() => { DeleteAdmin(); refreshPage(); }}>Delete Admin<MdOutlineAdminPanelSettings size={'18px'} /></button> : <button className='orange' onClick={() => { putAdmin(); refreshPage(); }}>Admin User<MdOutlineAdminPanelSettings size={'18px'} /></button>
-
+                                            item.oddiy_admin == true ? <button className='red' onClick={() => { DeleteAdmin(); refreshPage(); }}>Admin vazifasidan ajratish<MdOutlineAdminPanelSettings size={'18px'} /></button> : <button className='orange' onClick={() => { putAdmin(); refreshPage(); }}>Admin qilish<MdOutlineAdminPanelSettings size={'18px'} /></button>
                                         }
                                     </div>
                                 </div>
