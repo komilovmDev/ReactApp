@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/prop-types */
 import './mainCard.css';
 import { MdAdminPanelSettings } from "react-icons/md";

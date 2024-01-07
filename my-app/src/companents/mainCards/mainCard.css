@@ -11,6 +11,24 @@
     text-align: start;
 }
 
+.mainCards::-webkit-scrollbar {
+    width: .2vw;
+    height: .3vw;
+    /* ширина scrollbar */
+}
+
+.mainCards::-webkit-scrollbar-track {
+    background: white;
+    /* цвет дорожки */
+}
+
+.mainCards::-webkit-scrollbar-thumb {
+    background-color: #FF8B36;
+    /* цвет плашки */
+    border-radius: 1vw;
+    /* закругления плашки */ 
+}
+
 .MainttaskCard {
     width: 50vw;
     height: 16.5vw;
@@ -39,7 +57,7 @@
 .MainttaskCard::-webkit-scrollbar-thumb {
     background-color: #FF8B36;
     /* цвет плашки */
-    border-radius: 20px;
+    border-radius: 1vw;
     /* закругления плашки */ 
 }
 
