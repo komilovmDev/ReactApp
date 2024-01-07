@@ -61,6 +61,7 @@
 @media (max-width:768px) {
     .navbar {
         padding: 0;
+        height: 20vw;
         width: 100%;
         display: flex;
         align-items: center;
@@ -101,6 +102,7 @@
 
     .navbar .navRight .userInfo img {
         width: 13vw;
+        height: 13vw;
         border-radius: 50%;
         object-fit: cover;
         box-shadow: 0px 0px 15px 2px #FF8B36;
@@ -109,6 +111,21 @@
     .navbar .navRight .userInfo h5 {
         display: none;
     }
+
+    .navbar .navRight .userInfo {
+        width: 20vw;
+        height: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.6vw;
+        cursor: pointer;
+        border: none;
+        background: none;
+        border-radius: 1.2vw; 
+    }
+
+
 }
 
 
@@ -161,6 +178,35 @@
         background-color:#2d2d2d;
         border:none;
     }
+
+    .NameText p{
+        color:white;
+    }
+
+    .AdressEmail p {
+        color:white;
+    }
+    .PersonalTitle h1 {
+        color:white;
+    }
+
+    @media (max-width:768px) {
+        .navbar .navRight .userInfo {
+            background:none; 
+        }
+    }
+
+    .navbarburg .menu-items {
+        background-color:#2d2d2d;
+    }
+
+    .menu-items .ButtonDivMain {
+        background:inherit;
+    }
+
+    .hamburger-lines .line {
+        background-color:#FF8B36;
+    }
 }
 
 .toggle {
@@ -207,6 +253,56 @@ input:checked {
 
             .crater {
                 opacity: 1;
+            }
+        }
+    }
+}
+ 
+@media (max-width:768px) {
+    .toggle {
+        cursor: pointer;
+        display: flex;
+        align-items:center;
+        position: relative;
+        width: 10vw;
+        height: 5vw;
+        background-color: #FF8B36;
+        border-radius: 7vw;
+        transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+    
+    .toggle__handler {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        top: 0vw;
+        left: 1vw;
+        width: 5vw;
+        height: 5vw;
+        background-color: #FFCF96;
+        border-radius: 3vw; 
+        transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    input:checked {
+        +.toggle {
+            background-color: #FF8B36;
+    
+            &:before {
+                color: #749ED7;
+            }
+    
+            &:after {
+                color: #ffffff;
+            }
+    
+            .toggle__handler {
+                background-color: #FFE5B5;
+                transform: translate3d(3vw, 0, 0) rotate(0);
+    
+                .crater {
+                    opacity: 1;
+                }
             }
         }
     }
