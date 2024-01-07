@@ -205,7 +205,7 @@
 }
 
 .TextenButtonModal {
-    width: 100%;
+    width: 30vw;
     height: 21vw;
     display: flex;
     flex-direction: column;
@@ -230,8 +230,10 @@
     justify-content: space-between; 
     padding: 0 1vw;
 }
+ 
 
 .mainProfilINfo__texts {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -248,13 +250,14 @@
 }
 
 .mainProfilINfo .mainProfilINfo__btns {
-    width: 50%;
+    width: 100%;
+    gap: 3vw;
     display: flex; 
     justify-content: space-between;
 }
 
 .mainProfilINfo .mainProfilINfo__btns button {
-    width: 8vw;
+    width: 5vw;
     height: 2.5vw;
     display: flex;
     align-items: center;
@@ -263,36 +266,82 @@
 }
 
 .mainProfilINfo .mainProfilINfo__btns .red {
+    width: 15vw;
+    height: 3vw;
     background-color: red;
     color: white;
     border: red;
     border-radius: 4px;
     cursor: pointer;
+    font-size: .8vw; 
+    display: flex;
+    justify-content: center;
 }
 
 .mainProfilINfo .mainProfilINfo__btns .orange {
+    width: 15vw;
+    height: 3vw;
     background-color: orange;
     color: white;
     border: orange;
     border-radius: 4px;
     cursor: pointer;
+    font-size: .8vw;
+    display: flex;
+    justify-content: center;
 }
 
 .MainProfilInfo__Text_Name {
     display: flex;
 }
 
+.ModalName p {
+    color:#2d2d2d;
+    font-weight: 500;
+    font-size: 1vw;
+}
+
+.ModalLast p {
+    color:#2d2d2d;
+    font-weight: 500;
+    font-size: 1vw;
+}
+
+.ModalKasb p {
+    color:#2d2d2d;
+    font-weight: 500;
+    font-size: 1vw;
+}
+
+.ModalName h2 {
+    color:#FF8B36;
+    font-weight: 500;
+    font-size: 1vw;
+}
+
+.ModalLast h2 {
+    color:#FF8B36;
+    font-weight: 500;
+    font-size: 1vw;
+}
+
+.ModalKasb h4 {
+    color:#FF8B36;
+    font-weight: 500;
+    font-size: 1vw;
+}
+
 .ProfilModalImg { 
-    width: 20vw;
+    width: 50vw;
     height: 20vw;
     border-radius:1vw;
     border:.2vw solid #FF8B36;
     overflow: hidden;
     margin: 0;
     padding: 0;
-    -webkit-box-shadow: 0px 0px 51px -8px rgba(34, 60, 80, 0.12);
-    -moz-box-shadow: 0px 0px 51px -8px rgba(34, 60, 80, 0.12);
-    box-shadow: 0px 0px 51px -8px rgba(34, 60, 80, 0.12);
+    -webkit-box-shadow: 0px 0px 2.65625vw -0.4166666666666667vw rgba(34, 60, 80, 0.12);
+    -moz-box-shadow: 0px 0px 2.65625vw -0.4166666666666667vw rgba(34, 60, 80, 0.12);
+    box-shadow: 0px 0px 2.65625vw -0.4166666666666667vw rgba(34, 60, 80, 0.12);
 
 }
 
@@ -320,10 +369,10 @@
 }
 
 .popup {
-    margin: 70px auto;
-    padding: 20px;
+    margin: 3.6458333333333335vw auto;
+    padding: 1.0416666666666667vw;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 0.2604166666666667vw;
     width: 30%;
     position: relative;
     transition: all 5s ease-in-out;
@@ -337,10 +386,10 @@
 
 .popup .closes {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 1.0416666666666667vw;
+    right: 1.5625vw;
     transition: all 200ms;
-    font-size: 30px;
+    font-size: 1.5625vw;
     font-weight: bold;
     text-decoration: none;
     color: #333;
