@@ -52,6 +52,7 @@ export default function MainNav({ setTaskData, taskData }) {
         {
           title: inputRef.current.value,
           user: [userID],
+          end_date: `${newDateValue}`,
         },
         {
           headers: {
@@ -68,6 +69,7 @@ export default function MainNav({ setTaskData, taskData }) {
       closeRef.current.classList.add("none");
     } catch (error) {
       console.error("Error:", error);
+      console.log( `"${newDateValue}"`);
     }
   };
 
@@ -83,7 +85,7 @@ export default function MainNav({ setTaskData, taskData }) {
     const formattedDateTime = `${formattedDate}`;
 
     setCurrentDateTime(formattedDateTime);
-    console.log(`${year}-${month}-${day}`  );
+    console.log(`${year}-${month}-${day}`);
   };
 
   const handleButtonClickTime = () => {
@@ -96,6 +98,7 @@ export default function MainNav({ setTaskData, taskData }) {
   };
 
 
+  const [newDateValue , setNewDataValue] = useState(null)
 
   return (
     <>
@@ -174,7 +177,7 @@ export default function MainNav({ setTaskData, taskData }) {
           </Dropdown>
         </div>
         <div className="QoshishBtn">
-          <button onClick={() => { closeRef.current.classList.remove("none"); handleButtonClick(); handleButtonClickTime()}}>
+          <button onClick={() => { closeRef.current.classList.remove("none"); handleButtonClick(); handleButtonClickTime() }}>
             Qoshish
           </button>
         </div>
@@ -193,7 +196,7 @@ export default function MainNav({ setTaskData, taskData }) {
           </label>
           <div className="Timer">
             <label className="DateRegister" for="Date" >
-              <p>Boshlash:</p>
+              <p>Boshlash:</p> 
               {currentDateTime && <p> {currentDateTime}</p>}
               {currentHorseTime && <p> {currentHorseTime}</p>}
             </label>
@@ -203,7 +206,7 @@ export default function MainNav({ setTaskData, taskData }) {
                 type="datetime-local"
                 name="Date"
                 value={inputDate}
-                onChange={(e) => setInputDate(e.target.value) + console.log(e.target.value)}
+                onChange={(e) => setInputDate(e.target.value) + setNewDataValue(e.target.value)}
               />
             </label>
           </div>

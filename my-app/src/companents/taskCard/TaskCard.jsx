@@ -7,8 +7,8 @@ import BasicModal from '../BasicModal/Modal'
 import { BsCheckLg } from 'react-icons/bs'
 import { BiCheckboxMinus } from 'react-icons/bi'
 import Button from '@mui/material/Button';
-import { useRef } from 'react' 
-import { GoKebabHorizontal } from 'react-icons/go' 
+import { useRef } from 'react'
+import { GoKebabHorizontal } from 'react-icons/go'
 import { useState, useEffect } from 'react'
 
 
@@ -27,7 +27,7 @@ export default function TaskCard({ item }) {
         )
         window.location.reload()
     }
-    
+
     const userID = localStorage.getItem('userID')
     const renameBoard = async (Id, Title) => {
         const response = await axios.put(`https://manager.zafarr.uz/routers/all/boards/${item.id}/`,
@@ -68,6 +68,7 @@ export default function TaskCard({ item }) {
         )
         window.location.reload()
     }
+
     const [inputDate, setInputDate] = useState("");
     const [seconds, setSeconds] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
@@ -75,6 +76,22 @@ export default function TaskCard({ item }) {
     let interval;
 
     useEffect(() => {
+        const fetchEndDate = async () => {
+            try {
+                const response = await axios.get(`https://manager.zafarr.uz/routers/boards/${item.id}`);
+                const endDate = response.data.end_date; // Assuming the API response contains the end_date field
+                const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
+                const remainingTime = Math.max(0, endDate - currentTime);
+
+                setSeconds(remainingTime);
+                setIsRunning(true);
+            } catch (error) {
+                console.error('Error fetching end_date:', error);
+            }
+        };
+
+        fetchEndDate();
+
         if (isRunning) {
             interval = setInterval(() => {
                 if (seconds > 0) {
@@ -82,22 +99,13 @@ export default function TaskCard({ item }) {
                 }
             }, 1000);
         } else {
-            clearInterval(interval);
+            clearInterval(`interval`);
         }
 
         return () => {
             clearInterval(interval);
         };
-    }, [seconds, isRunning]);
-
-
-    const formatTime = (time) => {
-        const days = Math.floor(time / (24 * 60 * 60));
-        const hours = Math.floor(time % (24 * 60 * 60));
-
-        return `${days} д  `;
-    };
-
+    }, [item.id, seconds, isRunning]);
 
 
     const boardValue = useRef()
@@ -131,7 +139,7 @@ export default function TaskCard({ item }) {
                         </div>
                         <div className="TaskTimer">
                             <div className="Den">
-                                <p>{formatTime(seconds)}</p>
+                                <p>{seconds}</p>
                             </div>
                         </div>
                     </div>
